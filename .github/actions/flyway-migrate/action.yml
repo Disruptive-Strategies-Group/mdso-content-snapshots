@@ -1,0 +1,97 @@
+name: Flyway Migrate
+description: Open SSM port-forward tunnel to RDS via bastion and run flyway migrate against flyway/sql/.
+
+inputs:
+  bastion-instance-id:
+    description: EC2 instance ID of the SSM bastion host that fronts RDS.
+    required: true
+  db-host:
+    description: RDS endpoint hostname (target of the SSM port-forward).
+    required: true
+  db-port:
+    description: RDS port.
+    required: false
+    default: "5432"
+  db-name:
+    description: Database name to migrate.
+    required: true
+  db-user:
+    description: Database user.
+    required: true
+  db-password:
+    description: Database password.
+    required: true
+  aws-region:
+    description: AWS region for the SSM session.
+    required: false
+    default: "us-east-2"
+
+runs:
+  using: composite
+  steps:
+    - name: Install AWS Session Manager plugin
+      shell: bash
+      run: |
+        set -euo pipefail
+        curl -fsSL \
+          "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb" \
+          -o /tmp/session-manager-plugin.deb
+        sudo dpkg -i /tmp/session-manager-plugin.deb
+
+    - name: Install Flyway CLI
+      shell: bash
+      run: |
+        set -euo pipefail
+        FLYWAY_VERSION="10.15.0"
+        curl -fsSL \
+          "https://download.red-gate.com/maven/release/com/redgate/flyway/flyway-commandline/${FLYWAY_VERSION}/flyway-commandline-${FLYWAY_VERSION}-linux-x64.tar.gz" \
+          -o /tmp/flyway.tar.gz
+        tar -xzf /tmp/flyway.tar.gz -C /tmp
+        echo "/tmp/flyway-${FLYWAY_VERSION}" >> "$GITHUB_PATH"
+
+    - name: Start SSM port-forward tunnel
+      shell: bash
+      run: |
+        set -euo pipefail
+        LOCAL_PORT=15432
+        aws ssm start-session \
+          --region "${{ inputs.aws-region }}" \
+          --target "${{ inputs.bastion-instance-id }}" \
+          --document-name AWS-StartPortForwardingSessionToRemoteHost \
+          --parameters "host=${{ inputs.db-host }},portNumber=${{ inputs.db-port }},localPortNumber=${LOCAL_PORT}" &
+        echo "SSM_TUNNEL_PID=$!" >> "$GITHUB_ENV"
+        echo "FLYWAY_LOCAL_PORT=${LOCAL_PORT}" >> "$GITHUB_ENV"
+        python3 - <<'PYEOF'
+        import socket, time, sys
+        port = 15432
+        for i in range(30):
+            try:
+                with socket.create_connection(("127.0.0.1", port), timeout=1):
+                    print(f"Tunnel ready on port {port}")
+                    sys.exit(0)
+            except OSError:
+                time.sleep(1)
+        print("ERROR: tunnel did not become ready within 30 seconds", file=sys.stderr)
+        sys.exit(1)
+        PYEOF
+
+    - name: Run Flyway migrate
+      shell: bash
+      run: |
+        set -euo pipefail
+        flyway migrate \
+          -url="jdbc:postgresql://127.0.0.1:${FLYWAY_LOCAL_PORT}/${{ inputs.db-name }}" \
+          -user="${{ inputs.db-user }}" \
+          -password="${{ inputs.db-password }}" \
+          -locations="filesystem:flyway/sql" \
+          -schemas=public \
+          -baselineOnMigrate=false \
+          -outOfOrder=false
+
+    - name: Tear down SSM tunnel
+      if: always()
+      shell: bash
+      run: |
+        if [ -n "${SSM_TUNNEL_PID:-}" ]; then
+          kill "${SSM_TUNNEL_PID}" || true
+        fi
