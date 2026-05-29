@@ -84,9 +84,7 @@ runs:
           -user="${{ inputs.db-user }}" \
           -password="${{ inputs.db-password }}" \
           -locations="filesystem:flyway/sql" \
-          -schemas=public \
-          -baselineOnMigrate=false \
-          -outOfOrder=false
+          -configFiles=flyway/flyway.conf
 
     - name: Tear down SSM tunnel
       if: always()
