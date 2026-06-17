@@ -147,11 +147,11 @@ jobs:
       - name: Preflight secrets
         shell: bash
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DSG_BOT_TOKEN: ${{ secrets.DSG_BOT_TOKEN }}
         run: |
           set -euo pipefail
-          test -n "${ANTHROPIC_API_KEY}" || (echo "ERROR: ANTHROPIC_API_KEY missing/empty" && exit 1)
+          test -n "${DEEPSEEK_API_KEY}" || (echo "ERROR: DEEPSEEK_API_KEY missing/empty" && exit 1)
           test -n "${DSG_BOT_TOKEN}" || (echo "ERROR: DSG_BOT_TOKEN missing/empty" && exit 1)
 
       - name: Set IN-PROGRESS title
@@ -235,36 +235,16 @@ jobs:
             --json title,body,comments \
             > .agent/issue-context.json
 
-      - name: Claude implements approved plan (edit → commit only)
+      - name: Agent implements approved plan (edit → commit only)
         id: claude
-        uses: anthropics/claude-code-action@v1
+        uses: ./.github/actions/coding-agent
         with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          github_token: ${{ secrets.DSG_BOT_TOKEN }}
-          allowed_bots: dsg-agentic-assistant,dsg-mcp-server
-          show_full_output: true
-          prompt: |
-            YOU ARE AN AUTONOMOUS CODING AGENT WORKING IN A GIT REPOSITORY.
-
-            HARD REQUIREMENTS:
-            - Work ONLY on the current branch: ${{ env.BRANCH_NAME }}
-            - Make the minimal correct changes to satisfy the issue and the latest approved plan.
-            - You MUST commit your changes locally (git commit). Do NOT push. Do NOT open a PR.
-            - If no code changes are required, do NOT commit.
-            - Read issue context from .agent/issue-context.json.
-            - Treat the latest comment beginning with <!-- AGENT_PLAN --> as the authoritative plan.
-            - Do not modify .github/workflows unless the issue explicitly requires it.
-
-            TRIGGERING ISSUE (SOURCE OF TRUTH)
-            Issue #: ${{ env.ISSUE_NUMBER }}
-            Title: ${{ env.ISSUE_TITLE }}
-            Context file:
-            .agent/issue-context.json
-            END TRIGGERING ISSUE
-          claude_args: >-
-            --max-turns 40
-            --dangerously-skip-permissions
-            --allowedTools Bash,Edit,MultiEdit,Read,Write,Glob,Grep,Task,TodoWrite,WebFetch,WebSearch
+          api-key: ${{ secrets.DEEPSEEK_API_KEY }}
+          issue-context: .agent/issue-context.json
+          branch-name: ${{ env.BRANCH_NAME }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          issue-title: ${{ env.ISSUE_TITLE }}
+          max-turns: "40"
 
       - name: Safety net - commit working tree if Claude didn't
         id: autocommit
