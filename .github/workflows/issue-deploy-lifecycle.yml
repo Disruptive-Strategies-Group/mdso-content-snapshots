@@ -318,6 +318,17 @@ jobs:
 
             async function setDeploying(issueNum, prNum, mergeSha, headSha, requirements) {
               const { data: issue } = await github.rest.issues.get({ owner, repo, issue_number: issueNum });
+              // Dedup: skip if DSG-LIFECYCLE metadata for this merge SHA already exists
+              const existingComments = await github.rest.issues.listComments({
+                owner, repo, issue_number: issueNum, per_page: 100
+              });
+              if (existingComments.data.some(c =>
+                c.body.startsWith('DSG-LIFECYCLE:') &&
+                (c.body.includes(`merge_sha: ${mergeSha}`) || c.body.includes(`head_sha: ${headSha}`))
+              )) {
+                console.log(`Issue #${issueNum}: DSG-LIFECYCLE metadata already posted for this SHA. Skipping duplicate setDeploying.`);
+                return;
+              }
               const stripped  = stripAllPrefixes(issue.title);
               const newTitle  = PURPLE + ' [AGENT:DEPLOYING] ' + stripped;
               const reqKey    = requirements.isV3 ? 'required_sets' : 'expected_workflows';
@@ -338,6 +349,11 @@ jobs:
 
             async function setDeploymentComplete(issueNum, note) {
               const { data: issue } = await github.rest.issues.get({ owner, repo, issue_number: issueNum });
+              // Dedup: skip if already marked DEPLOYMENT COMPLETE
+              if (issue.title.includes('[DEPLOYMENT COMPLETE]')) {
+                console.log(`Issue #${issueNum}: already DEPLOYMENT COMPLETE. Skipping duplicate.`);
+                return;
+              }
               const stripped = stripAllPrefixes(issue.title);
               const newTitle = BLACK + ' [DEPLOYMENT COMPLETE] ' + stripped;
               await github.rest.issues.update({ owner, repo, issue_number: issueNum, title: newTitle });
@@ -347,6 +363,11 @@ jobs:
 
             async function setDeploymentBlocked(issueNum, wfName, conclusion) {
               const { data: issue } = await github.rest.issues.get({ owner, repo, issue_number: issueNum });
+              // Dedup: skip if already marked DEPLOYMENT BLOCKED
+              if (issue.title.includes('[DEPLOYMENT BLOCKED]')) {
+                console.log(`Issue #${issueNum}: already DEPLOYMENT BLOCKED. Skipping duplicate.`);
+                return;
+              }
               const stripped = stripAllPrefixes(issue.title);
               const newTitle = RED + ' [DEPLOYMENT BLOCKED] ' + stripped;
               await github.rest.issues.update({ owner, repo, issue_number: issueNum, title: newTitle });
