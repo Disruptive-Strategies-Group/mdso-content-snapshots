@@ -33,7 +33,7 @@ runs:
       shell: bash
       run: |
         set -euo pipefail
-        curl -fsSL \
+        curl -fsSL --retry 3 --retry-delay 5 \
           "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb" \
           -o /tmp/session-manager-plugin.deb
         sudo dpkg -i /tmp/session-manager-plugin.deb
@@ -42,8 +42,8 @@ runs:
       shell: bash
       run: |
         set -euo pipefail
-        FLYWAY_VERSION="10.15.0"
-        curl -fsSL \
+        FLYWAY_VERSION="10.22.0"
+        curl -fsSL --retry 3 --retry-delay 5 \
           "https://download.red-gate.com/maven/release/com/redgate/flyway/flyway-commandline/${FLYWAY_VERSION}/flyway-commandline-${FLYWAY_VERSION}-linux-x64.tar.gz" \
           -o /tmp/flyway.tar.gz
         tar -xzf /tmp/flyway.tar.gz -C /tmp
