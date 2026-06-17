@@ -6,7 +6,7 @@ on:
   push:
     branches: [main]
     paths-ignore:
-      - '.github/workflows/claude-agent.yml'
+      - '.github/workflows/code-agent.yml'
       - '.github/workflows/ci.yml'
       - '.github/workflows/lifecycle-bootstrap.yml'
       - '.github/workflows/issue-deploy-lifecycle.yml'
