@@ -20,7 +20,7 @@ permissions:
 
 concurrency:
   group: agent-pr-ci-summary-${{ github.event.pull_request.number || github.event.check_suite.pull_requests[0].number || github.run_id }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   summarize:
@@ -531,6 +531,17 @@ jobs:
                   );
                   return;
                 }
+              }
+
+              // Dedup: skip if AGENT_PR_READY for this HEAD_SHA already posted
+              const readyAlreadyPosted = comments.some(c =>
+                typeof c.body === 'string' &&
+                c.body.startsWith('<!-- AGENT_PR_READY -->') &&
+                c.body.includes(`HEAD_SHA: ${headSha}`)
+              );
+              if (readyAlreadyPosted) {
+                core.info(`AGENT_PR_READY for HEAD_SHA ${headSha} already posted on PR #${issue_number}. Skipping duplicate.`);
+                return;
               }
             } catch (e) {
               core.warning(`Noop suppression check failed (proceeding with AGENT_PR_READY): ${e.message}`);
