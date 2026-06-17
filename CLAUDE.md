@@ -37,4 +37,4 @@ Closes #<issue_number>
 
 These markers suppress GitHub Actions workflows on push to main, **silently breaking the automated deploy chain** for deployment-managed repos. An issue moves to DEPLOYING but no deploy workflows ever run, leaving it stranded indefinitely.
 
-This rule is enforced at two levels: (1) agent-side validation in the claude-agent workflow blocks CI-skip markers before push, and (2) repo-side PR validation workflow fails any pull request containing these markers in the title, body, or commit history.
+This rule is enforced at two levels: (1) agent-side validation in the code-agent workflow blocks CI-skip markers before push, and (2) repo-side PR validation workflow fails any pull request containing these markers in the title, body, or commit history.
