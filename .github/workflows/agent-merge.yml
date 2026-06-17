@@ -185,10 +185,18 @@ jobs:
             if (linkedIssueMatch) {
               const linkedIssue = Number(linkedIssueMatch[1]);
               try {
-                await github.rest.issues.createComment({
-                  owner, repo, issue_number: linkedIssue,
-                  body: mergeCompleteBody
+                // Dedup: skip if AGENT_MERGE_COMPLETE already posted on the linked issue
+                const issueComments = await github.rest.issues.listComments({
+                  owner, repo, issue_number: linkedIssue, per_page: 100
                 });
+                if (issueComments.data.some(c => typeof c.body === 'string' && c.body.startsWith('<!-- AGENT_MERGE_COMPLETE -->'))) {
+                  core.info(`AGENT_MERGE_COMPLETE already posted on issue #${linkedIssue}. Skipping duplicate.`);
+                } else {
+                  await github.rest.issues.createComment({
+                    owner, repo, issue_number: linkedIssue,
+                    body: mergeCompleteBody
+                  });
+                }
                 await github.rest.issues.update({
                   owner, repo, issue_number: linkedIssue,
                   state: 'closed'
@@ -199,9 +207,17 @@ jobs:
               }
             } else {
               // Fallback: no linked issue found — post enriched comment on the PR itself
-              await github.rest.issues.createComment({
-                owner, repo, issue_number: prNumber,
-                body: mergeCompleteBody
+              // Dedup: skip if AGENT_MERGE_COMPLETE already posted on the PR
+              const prComments = await github.rest.issues.listComments({
+                owner, repo, issue_number: prNumber, per_page: 100
               });
+              if (prComments.data.some(c => typeof c.body === 'string' && c.body.startsWith('<!-- AGENT_MERGE_COMPLETE -->'))) {
+                core.info(`AGENT_MERGE_COMPLETE already posted on PR #${prNumber}. Skipping duplicate.`);
+              } else {
+                await github.rest.issues.createComment({
+                  owner, repo, issue_number: prNumber,
+                  body: mergeCompleteBody
+                });
+              }
               core.warning('No linked issue found in PR body. Posted merge-complete comment on PR as fallback.');
             }
