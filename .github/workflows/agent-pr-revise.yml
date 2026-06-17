@@ -226,49 +226,19 @@ jobs:
           echo "pre_push_sha=${sha}" >> "$GITHUB_OUTPUT"
           echo "Pre-push SHA: ${sha}"
 
-      - name: Claude revision agent
+      - name: Revision agent
         if: steps.cycle_guard.outputs.escalate != 'true' && steps.concerns.outputs.no_concerns != 'true'
         id: claude
         continue-on-error: true
-        uses: anthropics/claude-code-action@v1
+        uses: ./.github/actions/coding-agent
         with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          github_token: ${{ secrets.DSG_BOT_TOKEN }}
-          allowed_bots: dsg-agentic-assistant,dsg-mcp-server,dsg-commenter
-          prompt: |
-            YOU ARE AN AUTONOMOUS CODING AGENT PERFORMING A TARGETED PR REVISION.
-
-            HARD REQUIREMENTS:
-            - Work ONLY on the current branch: ${{ steps.meta.outputs.head_ref }}
-            - You MUST commit your changes locally (git commit). Do NOT push. Do NOT open a PR.
-            - You MAY modify files in .github/workflows/ if the review concerns explicitly require it.
-            - Read issue context from .agent/issue-context.json if present.
-
-            MANDATORY FIRST STEPS — complete ALL of these before touching any file:
-            1. Run `git diff origin/${{ steps.meta.outputs.base_ref }}...HEAD` to understand what this branch has changed so far.
-            2. Run `git log --oneline -10` to see full commit history including any prior revision attempts.
-            3. For EACH file mentioned in the review concerns: read the CURRENT file content in full using Read or Bash before editing it.
-            4. Read `.agent/issue-context.json` if present to understand the original issue requirements.
-            5. Read ALL review concerns below carefully. These are concerns raised AFTER the current HEAD commit was pushed — they represent issues not yet addressed in the current branch state.
-
-            EDITING RULES:
-            - For EACH concern: first check `git diff origin/${{ steps.meta.outputs.base_ref }}...HEAD` to see if it is already addressed in the current branch. If it is already correctly implemented, skip it and move on.
-            - If a concern is NOT yet addressed, implement it now.
-            - Make ONLY the changes explicitly requested. Do not refactor, reformat, or touch anything else.
-            - If a concern asks you to ADD a block that does not currently exist, INSERT it.
-            - If a concern asks you to CHANGE existing text, find it in the file and replace it precisely.
-            - After editing, verify with `git diff` that your changes look correct before committing.
-            - Your commit message must list the specific files changed and what was changed.
-            - If after reading the file you genuinely cannot find what the review is asking about, note that in your commit message but still commit something — never produce a silent no-op.
-
-            REVIEW CONCERNS TO ADDRESS (post-push only):
-            ${{ steps.concerns.outputs.concerns }}
-
-            END REVIEW CONCERNS
-          claude_args: '--max-turns 25 --dangerously-skip-permissions'
-          show_full_output: true
-          additional_permissions: |
-            Bash(git diff:*),Bash(git log:*),Bash(git add:*),Bash(git commit:*),Bash(git status:*),Bash(git restore:*),Bash(git show:*),Bash(cat:*),Bash(head:*),Bash(tail:*),Bash(grep:*),Bash(find:*),Bash(ls:*),Bash(awk:*),Bash(sed:*),Bash(echo:*),Bash(wc:*),Bash(sort:*),Bash(uniq:*),Bash(cut:*),Bash(tr:*),Bash(mkdir:*),Bash(cp:*),Bash(mv:*),Bash(touch:*),Bash(rm:*),Bash(which:*),Bash(env:*),Bash(tee:*),Bash(xargs:*),Edit(*),Write(*),Read(*)
+          api-key: ${{ secrets.DEEPSEEK_API_KEY }}
+          issue-context: .agent/issue-context.json
+          branch-name: ${{ steps.meta.outputs.head_ref }}
+          issue-number: ${{ steps.meta.outputs.pr_number }}
+          max-turns: "25"
+          mode: revise
+          review-concerns: ${{ steps.concerns.outputs.concerns }}
 
       - name: Check for permission denials
         if: steps.cycle_guard.outputs.escalate != 'true' && steps.concerns.outputs.no_concerns != 'true'
@@ -329,11 +299,11 @@ jobs:
               owner, repo, issue_number: prNumber,
               body: [
                 '<!-- AGENT_REVISE_ERROR -->',
-                '⚠️ **Claude Code step failed during revision** — the safety-net noop commit was pushed to keep CI alive, but no code changes were made.',
+                '⚠️ **Agent step failed during revision** — the safety-net noop commit was pushed to keep CI alive, but no code changes were made.',
                 '',
                 'Check the [workflow run logs](' +
                   `https://github.com/${owner}/${repo}/actions/runs/${{ github.run_id }}` +
-                  ') for the root cause. Common causes: `allowed_bots` misconfiguration, ANTHROPIC_API_KEY missing, or Claude Code runtime error.'
+                  ') for the root cause.'
               ].join('\n')
             });
 
