@@ -13,7 +13,7 @@ The lifecycle system consists of **canonical files** (pushed to every repo) and 
 | File | Purpose |
 |------|---------|
 | `.github/workflows/ci.yml` | Canonical CI workflow (managed centrally) |
-| `.github/workflows/claude-agent.yml` | Canonical Claude agent workflow (managed centrally) |
+| `.github/workflows/code-agent.yml` | Canonical Claude agent workflow (managed centrally) |
 | `.github/workflows/lifecycle-bootstrap.yml` | Stable event bootstrap — triggers only, no logic (managed centrally) |
 | `.github/workflows/issue-deploy-lifecycle.yml` | Deterministic reconciler — all lifecycle decision logic (managed centrally) |
 | `.github/workflows/sam-deploy.yml` | Canonical SAM deploy workflow (managed centrally) |
