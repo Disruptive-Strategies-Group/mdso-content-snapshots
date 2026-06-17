@@ -54,7 +54,7 @@ Every DSG repository managed by `dsg-repo-initializer` receives the same canonic
 
 | File | Source in this repo |
 |------|---------------------|
-| `.github/workflows/claude-agent.yml` | `.github/workflows/claude-agent.yml` |
+| `.github/workflows/code-agent.yml` | `.github/workflows/code-agent.yml` |
 | `.github/workflows/ci.yml` | `.github/workflows/ci.yml` |
 | `.github/workflows/lifecycle-bootstrap.yml` | `.github/workflows/lifecycle-bootstrap.yml` |
 | `.github/workflows/issue-deploy-lifecycle.yml` | `.github/workflows/issue-deploy-lifecycle.yml` |
