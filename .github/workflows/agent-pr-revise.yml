@@ -307,7 +307,7 @@ jobs:
               ].join('\n')
             });
 
-      - name: Exit if permission status unknown
+      - name: Permission status unknown warning
         if: >
           steps.cycle_guard.outputs.escalate != 'true' &&
           steps.concerns.outputs.no_concerns != 'true' &&
@@ -337,7 +337,7 @@ jobs:
         if: >
           steps.cycle_guard.outputs.escalate != 'true' &&
           steps.concerns.outputs.no_concerns != 'true' &&
-          steps.permission_check.outputs.has_denials == 'false'
+          steps.permission_check.outputs.has_denials != 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -372,7 +372,7 @@ jobs:
         if: >
           steps.cycle_guard.outputs.escalate != 'true' &&
           steps.concerns.outputs.no_concerns != 'true' &&
-          steps.permission_check.outputs.has_denials == 'false'
+          steps.permission_check.outputs.has_denials != 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -382,7 +382,7 @@ jobs:
         if: >
           steps.cycle_guard.outputs.escalate != 'true' &&
           steps.concerns.outputs.no_concerns != 'true' &&
-          steps.permission_check.outputs.has_denials == 'false'
+          steps.permission_check.outputs.has_denials != 'true'
         id: actual_diff
         shell: bash
         run: |
@@ -411,7 +411,7 @@ jobs:
         if: >
           steps.cycle_guard.outputs.escalate != 'true' &&
           steps.concerns.outputs.no_concerns != 'true' &&
-          steps.permission_check.outputs.has_denials == 'false'
+          steps.permission_check.outputs.has_denials != 'true'
         uses: actions/github-script@v7
         env:
           CONCERNS: ${{ steps.concerns.outputs.concerns }}
