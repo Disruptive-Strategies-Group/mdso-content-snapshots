@@ -307,6 +307,32 @@ jobs:
               ].join('\n')
             });
 
+      - name: Exit if permission status unknown
+        if: >
+          steps.cycle_guard.outputs.escalate != 'true' &&
+          steps.concerns.outputs.no_concerns != 'true' &&
+          steps.permission_check.outputs.has_denials == 'unknown'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.DSG_BOT_TOKEN }}
+          script: |
+            const { owner, repo } = context.repo;
+            const prNumber = Number('${{ steps.meta.outputs.pr_number }}');
+            await github.rest.issues.createComment({
+              owner, repo, issue_number: prNumber,
+              body: [
+                '<!-- AGENT_REVISE_ERROR -->',
+                '⚠️ **Permission status unknown** — `claude-execution-output.json` was not found, so permission denials could not be verified. The revision agent may not have produced output as expected.',
+                '',
+                'No changes were pushed. Human review is recommended.',
+                '',
+                'Check the [workflow run logs](' +
+                  `https://github.com/${owner}/${repo}/actions/runs/${{ github.run_id }}` +
+                  ') for details.'
+              ].join('\n')
+            });
+            core.info('Permission status unknown — exiting to prevent unsafe push.');
+
       - name: Safety-net commit and cleanup
         if: >
           steps.cycle_guard.outputs.escalate != 'true' &&
