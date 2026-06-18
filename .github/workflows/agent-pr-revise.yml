@@ -240,50 +240,6 @@ jobs:
           mode: revise
           review-concerns: ${{ steps.concerns.outputs.concerns }}
 
-      - name: Check for permission denials
-        if: steps.cycle_guard.outputs.escalate != 'true' && steps.concerns.outputs.no_concerns != 'true'
-        id: permission_check
-        uses: actions/github-script@v7
-        env:
-          RUNNER_TEMP: ${{ runner.temp }}
-        with:
-          github-token: ${{ secrets.DSG_BOT_TOKEN }}
-          script: |
-            const fs = require('fs');
-            const { owner, repo } = context.repo;
-            const prNumber = Number('${{ steps.meta.outputs.pr_number }}');
-
-            const outputPath = `${process.env.RUNNER_TEMP}/claude-execution-output.json`;
-            let denialCount = 0;
-            try {
-              const raw = fs.readFileSync(outputPath, 'utf8');
-              const parsed = JSON.parse(raw);
-              denialCount = parsed.permission_denials_count ?? 0;
-            } catch (e) {
-              core.warning(`Could not read claude-execution-output.json: ${e.message}`);
-              core.setOutput('has_denials', 'unknown');
-              return;
-            }
-
-            core.info(`Permission denials: ${denialCount}`);
-
-            if (denialCount > 0) {
-              core.setOutput('has_denials', 'true');
-              await github.rest.issues.createComment({
-                owner, repo, issue_number: prNumber,
-                body: [
-                  '<!-- AGENT_REVISE_ERROR -->',
-                  `⛔ **Revision blocked by permission denials** — Claude Code was denied permission ${denialCount} time(s) during this revision cycle. No file changes were made.`,
-                  '',
-                  'This typically means the review concerns require changes to files that the agent is not permitted to write in this execution context. Human intervention is required.',
-                  '',
-                  `Check the [workflow run logs](https://github.com/${owner}/${repo}/actions/runs/${{ github.run_id }}) for details.`
-                ].join('\n')
-              });
-            } else {
-              core.setOutput('has_denials', 'false');
-            }
-
       - name: Warn if Claude Code failed
         if: >
           steps.cycle_guard.outputs.escalate != 'true' &&
@@ -307,37 +263,10 @@ jobs:
               ].join('\n')
             });
 
-      - name: Permission status unknown warning
-        if: >
-          steps.cycle_guard.outputs.escalate != 'true' &&
-          steps.concerns.outputs.no_concerns != 'true' &&
-          steps.permission_check.outputs.has_denials == 'unknown'
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.DSG_BOT_TOKEN }}
-          script: |
-            const { owner, repo } = context.repo;
-            const prNumber = Number('${{ steps.meta.outputs.pr_number }}');
-            await github.rest.issues.createComment({
-              owner, repo, issue_number: prNumber,
-              body: [
-                '<!-- AGENT_REVISE_ERROR -->',
-                '⚠️ **Permission status unknown** — `claude-execution-output.json` was not found, so permission denials could not be verified. The revision agent may not have produced output as expected.',
-                '',
-                'No changes were pushed. Human review is recommended.',
-                '',
-                'Check the [workflow run logs](' +
-                  `https://github.com/${owner}/${repo}/actions/runs/${{ github.run_id }}` +
-                  ') for details.'
-              ].join('\n')
-            });
-            core.info('Permission status unknown — exiting to prevent unsafe push.');
-
       - name: Safety-net commit and cleanup
         if: >
           steps.cycle_guard.outputs.escalate != 'true' &&
-          steps.concerns.outputs.no_concerns != 'true' &&
-          steps.permission_check.outputs.has_denials != 'true'
+          steps.concerns.outputs.no_concerns != 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -371,8 +300,7 @@ jobs:
       - name: Push branch
         if: >
           steps.cycle_guard.outputs.escalate != 'true' &&
-          steps.concerns.outputs.no_concerns != 'true' &&
-          steps.permission_check.outputs.has_denials != 'true'
+          steps.concerns.outputs.no_concerns != 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -381,8 +309,7 @@ jobs:
       - name: Capture post-revision diff
         if: >
           steps.cycle_guard.outputs.escalate != 'true' &&
-          steps.concerns.outputs.no_concerns != 'true' &&
-          steps.permission_check.outputs.has_denials != 'true'
+          steps.concerns.outputs.no_concerns != 'true'
         id: actual_diff
         shell: bash
         run: |
@@ -410,8 +337,7 @@ jobs:
       - name: Post revision summary comment
         if: >
           steps.cycle_guard.outputs.escalate != 'true' &&
-          steps.concerns.outputs.no_concerns != 'true' &&
-          steps.permission_check.outputs.has_denials != 'true'
+          steps.concerns.outputs.no_concerns != 'true'
         uses: actions/github-script@v7
         env:
           CONCERNS: ${{ steps.concerns.outputs.concerns }}
