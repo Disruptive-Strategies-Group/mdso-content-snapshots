@@ -8,6 +8,7 @@ on:
       - "terraform/**"
       - "**/*.tf"
       - "**/*.tfvars"
+      - "flyway/**"
 
 permissions:
   id-token: write
