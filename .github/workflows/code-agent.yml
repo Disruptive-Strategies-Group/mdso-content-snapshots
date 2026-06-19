@@ -538,7 +538,16 @@ jobs:
       BRANCH_ADVANCED: ${{ needs.implement.outputs.branch_advanced }}
 
     steps:
+      - name: Check for existing BLOCKED comment
+        id: check_blocked
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          EXISTING=$(gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json comments --jq '[.comments[].body | select(startswith("<!-- AGENT_BLOCKED -->"))] | length')
+          echo "count=$EXISTING" >> "$GITHUB_OUTPUT"
+
       - name: "Finalize: update title prefix + comment"
+        if: steps.check_blocked.outputs.count == '0'
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.DSG_BOT_TOKEN }}
@@ -587,7 +596,7 @@ jobs:
                 try { await github.rest.issues.update({ owner, repo, issue_number, title: newTitle }); } catch (e) {}
                 await github.rest.issues.createComment({
                   owner, repo, issue_number,
-                  body: `Agent approval run produced no code changes and no PR.\n\nPlease adjust the issue and comment \`/agent approve\` again.\n\nStatus: AGENT:BLOCKED`
+                  body: `<!-- AGENT_BLOCKED -->\nAgent approval run produced no code changes and no PR.\n\nPlease adjust the issue and comment \`/agent approve\` again.\n\nStatus: AGENT:BLOCKED`
                 });
                 return;
               }
@@ -620,7 +629,7 @@ jobs:
                 try { await github.rest.issues.update({ owner, repo, issue_number, title: newTitle }); } catch (e) {}
                 await github.rest.issues.createComment({
                   owner, repo, issue_number,
-                  body: `Agent hit the turn limit. Partial work has been committed to \`${process.env.BRANCH_NAME}\`. Comment \`/agent approve\` to continue from the current branch state.\n\nStatus: AGENT:BLOCKED`
+                  body: `<!-- AGENT_BLOCKED -->\nAgent hit the turn limit. Partial work has been committed to \`${process.env.BRANCH_NAME}\`. Comment \`/agent approve\` to continue from the current branch state.\n\nStatus: AGENT:BLOCKED`
                 });
                 return;
               }
@@ -629,7 +638,7 @@ jobs:
               try { await github.rest.issues.update({ owner, repo, issue_number, title: newTitle }); } catch (e) {}
               await github.rest.issues.createComment({
                 owner, repo, issue_number,
-                body: `Agent implementation run failed or did not produce the expected output.\n\nFor planning changes, comment \`/agent revise\`.\nFor implementation after approval, comment \`/agent approve\`.\n\nStatus: AGENT:BLOCKED`
+                body: `<!-- AGENT_BLOCKED -->\nAgent implementation run failed or did not produce the expected output.\n\nFor planning changes, comment \`/agent revise\`.\nFor implementation after approval, comment \`/agent approve\`.\n\nStatus: AGENT:BLOCKED`
               });
               return;
             }
@@ -639,7 +648,7 @@ jobs:
 
             await github.rest.issues.createComment({
               owner, repo, issue_number,
-              body: 'Agent finalize run reached an unexpected state.\n\nPlease inspect the workflow and re-run from the issue once corrected.\n\nStatus: AGENT:BLOCKED'
+              body: '<!-- AGENT_BLOCKED -->\nAgent finalize run reached an unexpected state.\n\nPlease inspect the workflow and re-run from the issue once corrected.\n\nStatus: AGENT:BLOCKED'
             });
 
       - name: "Finalize: create or retitle PR after NEEDS-REVIEW"
