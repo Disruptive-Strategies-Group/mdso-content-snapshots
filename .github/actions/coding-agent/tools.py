@@ -9,6 +9,8 @@ from __future__ import annotations
 import glob as glob_module
 import json
 import os
+import re
+import shlex
 import subprocess
 from pathlib import Path
 from typing import Any
@@ -232,6 +234,31 @@ def edit_file(path: str, old_text: str, new_text: str) -> dict[str, Any]:
         return {"output": f"Error editing {path}: {e}", "is_error": True}
 
 
+def _requote_pip_install(cmd: str) -> str:
+    """
+    If cmd is a pip install command, ensure version specifier tokens
+    containing shell metacharacters are properly quoted.
+
+    This prevents shell interpretation of '>' and '<' as redirect operators
+    in version specifiers like 'openai>=1.30.0'.
+    """
+    # Only process pip install / pip3 install commands
+    if not re.search(r'\bpip3?\s+install\b', cmd):
+        return cmd
+    try:
+        tokens = shlex.split(cmd)
+    except ValueError:
+        return cmd  # leave malformed commands unchanged
+    # Re-quote any token that contains version specifier metacharacters
+    requoted = []
+    for tok in tokens:
+        if re.search(r'[><=!~]', tok):
+            requoted.append(shlex.quote(tok))
+        else:
+            requoted.append(tok)
+    return ' '.join(requoted)
+
+
 def bash(command: str) -> dict[str, Any]:
     # Block dangerous commands
     blocked = ["git push", "git remote remove", "rm -rf /", "rm -rf ~"]
@@ -240,8 +267,10 @@ def bash(command: str) -> dict[str, Any]:
         if b in cmd_lower:
             return {"output": f"Blocked command: {b} is not allowed", "is_error": True}
     try:
+        # Quote pip install version specifiers to prevent shell redirection
+        safe_command = _requote_pip_install(command)
         result = subprocess.run(
-            command,
+            safe_command,
             shell=True,
             capture_output=True,
             text=True,
