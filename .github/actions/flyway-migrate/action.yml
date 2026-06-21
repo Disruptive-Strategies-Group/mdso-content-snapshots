@@ -107,12 +107,13 @@ runs:
 
     - name: Run Flyway migrate
       shell: bash
+      env:
+        FLYWAY_URL: "jdbc:postgresql://127.0.0.1:${{ env.FLYWAY_LOCAL_PORT }}/${{ inputs.db-name }}"
+        FLYWAY_USER: "${{ inputs.db-user }}"
+        FLYWAY_PASSWORD: "${{ inputs.db-password }}"
       run: |
         set -euo pipefail
         flyway migrate \
-          -url="jdbc:postgresql://127.0.0.1:${FLYWAY_LOCAL_PORT}/${{ inputs.db-name }}" \
-          -user="${{ inputs.db-user }}" \
-          -password="${{ inputs.db-password }}" \
           -locations="filesystem:flyway/sql" \
           -configFiles=flyway/flyway.conf
 
