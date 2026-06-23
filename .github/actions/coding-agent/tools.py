@@ -234,28 +234,30 @@ def edit_file(path: str, old_text: str, new_text: str) -> dict[str, Any]:
         return {"output": f"Error editing {path}: {e}", "is_error": True}
 
 
-def _requote_pip_install(cmd: str) -> str:
+def _sanitize_version_specifiers(cmd: str) -> str:
     """
-    If cmd is a pip install command, ensure version specifier tokens
-    containing shell metacharacters are properly quoted.
-
-    This prevents shell interpretation of '>' and '<' as redirect operators
-    in version specifiers like 'openai>=1.30.0'.
+    Quote any token in cmd that looks like a package version specifier
+    (e.g., package>=1.0, pkg!=2.0) so the shell does not interpret
+    > or < as redirect operators.  Applies to ALL commands, not just pip.
     """
-    # Only process pip install / pip3 install commands
-    if not re.search(r'\bpip3?\s+install\b', cmd):
-        return cmd
+    # Pre-sanitize pass: quote bare tokens like "package>=1.0" before
+    # shlex.split sees them.  This regex matches word>=digits patterns
+    # that are never legitimate shell redirects (real redirects have
+    # whitespace before the > operator).
+    cmd = re.sub(
+        r'(\b\w[\w.\-]*(?:>=|<=|!=|~=|==|>|<)\d[\w.*]*)',
+        lambda m: shlex.quote(m.group(1)),
+        cmd,
+    )
+    # Second pass: tokenize and re-quote any remaining specifier tokens.
     try:
         tokens = shlex.split(cmd)
     except ValueError:
-        return cmd  # leave malformed commands unchanged
-    # Re-quote any token that contains version specifier metacharacters
-    requoted = []
-    for tok in tokens:
-        if re.search(r'[><=!~]', tok):
-            requoted.append(shlex.quote(tok))
-        else:
-            requoted.append(tok)
+        return cmd
+    requoted = [
+        shlex.quote(tok) if re.search(r'\w[><=!~]+\d', tok) else tok
+        for tok in tokens
+    ]
     return ' '.join(requoted)
 
 
@@ -268,7 +270,7 @@ def bash(command: str) -> dict[str, Any]:
             return {"output": f"Blocked command: {b} is not allowed", "is_error": True}
     try:
         # Quote pip install version specifiers to prevent shell redirection
-        safe_command = _requote_pip_install(command)
+        safe_command = _sanitize_version_specifiers(command)
         result = subprocess.run(
             safe_command,
             shell=True,
