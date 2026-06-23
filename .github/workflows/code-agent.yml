@@ -263,6 +263,11 @@ jobs:
           git restore --staged --worktree .github/workflows 2>/dev/null || true
           rm -rf .agent
 
+          # Clean up junk files from shell redirect interpretation of version specifiers
+          # e.g., "pip install pkg>=1.0" creates a file named "=1.0" via the ">" redirect
+          find . -maxdepth 1 -name '=[0-9]*' -type f -delete 2>/dev/null || true
+          find . -maxdepth 1 -name '[0-9]*.[0-9]*' -type f -size -1k -newer .git/HEAD -delete 2>/dev/null || true
+
           # If Claude created files but didn't commit, create a commit so push/PR can happen.
           if [ -n "$(git status --porcelain)" ]; then
             if [ "${CLAUDE_OUTCOME}" = "success" ]; then
