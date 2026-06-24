@@ -17,6 +17,7 @@ Environment variables (set by the composite action):
 
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import re
@@ -197,6 +198,10 @@ def run_agent() -> tuple[bool, int]:
     consecutive_errors = 0
     max_consecutive_errors = 5
 
+    # Stuck-loop detection: track signatures of consecutive identical failing tool calls
+    repeated_fail_sigs: list[str] = []
+    stuck_redirects = 0
+
     while turns < MAX_TURNS:
         turns += 1
         log(f"--- Turn {turns}/{MAX_TURNS} ---")
@@ -248,9 +253,16 @@ def run_agent() -> tuple[bool, int]:
 
             if result["is_error"]:
                 log(f"  Error: {result['output'][:200]}")
+                # Track consecutive identical failing tool calls
+                sig = hashlib.md5(
+                    f"{fn_name}:{json.dumps(fn_args, sort_keys=True)}".encode()
+                ).hexdigest()
+                repeated_fail_sigs.append(sig)
             else:
                 output_preview = result["output"][:100].replace("\n", " ")
                 log(f"  OK: {output_preview}...")
+                # Successful tool call resets failure tracking
+                repeated_fail_sigs = []
 
             messages.append(
                 {
@@ -259,6 +271,35 @@ def run_agent() -> tuple[bool, int]:
                     "content": result["output"],
                 }
             )
+
+        # Stuck-loop detection: check for repeated identical failing tool calls
+        if len(repeated_fail_sigs) >= 3 and len(set(repeated_fail_sigs[-3:])) == 1:
+            log(
+                f"WARNING: Agent repeated the same failing tool call "
+                f"{len(repeated_fail_sigs)} times consecutively"
+            )
+            if stuck_redirects >= 2:
+                log(
+                    "Agent stuck in repeated failure loop after redirect "
+                    "attempts, aborting"
+                )
+                return False, turns
+            # Inject a redirect message to nudge the model toward a different approach
+            messages.append(
+                {
+                    "role": "user",
+                    "content": (
+                        "SYSTEM: You have repeated the same failing tool call "
+                        f"{len(repeated_fail_sigs)} times with the same error each "
+                        "time. This approach is not working. Try a completely "
+                        "different strategy — use a different tool, different "
+                        "command syntax, or different approach to accomplish the task."
+                    ),
+                }
+            )
+            stuck_redirects += 1
+            repeated_fail_sigs = []
+            log(f"Redirect injected (attempt {stuck_redirects}/2)")
 
         # Context window management: if messages are getting very large,
         # summarize older tool results to stay within limits
