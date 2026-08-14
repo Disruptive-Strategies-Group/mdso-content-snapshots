@@ -1,636 +1,452 @@
-<!-- ============================================================
-     CONTACT THE SHERIFF'S OFFICE — Virtual Table of Organization
-     Drop into the Custom HTML widget on the Contact MDSO page.
 
-     Mirrors the legacy /sheriff/about-mdso/contact-sheriffs-office.page
-     IA SECTION-FOR-SECTION:
-       1. Address strip
-       2. Office of the Sheriff           (Sheriff featured + 8 staff)
-       3. Office of the Undersheriff      (Undersheriff featured + 3 staff)  ← separate section, NOT next to Sheriff
-       4. Office of Administration        (bureau directory; no headshots)
-       5. Professional Standards Division (bureau directory; no headshots)
-       6. Patrol Services                 (Asst Sheriff + 2 div chiefs + N/S bureau columns)
-       7. Support Services                (Asst Sheriff + 3 chiefs/director + bureau columns)
-       8. Investigative & Specialized     (Asst Sheriff + 2 chiefs + bureau columns)
-       9. Additional contacts (records / ADA / crime stoppers)
-
-     Every person who has a real headshot on the legacy site has their
-     real photo wired in. Two silhouettes match what legacy itself uses
-     (Mailyn Sola-Castellanos, Domingo Alfaro).
-
-     IMG-COUNTY  → real legacy county-hosted photo (rehost in batch)
-     IMG-PENDING → silhouette placeholder (legacy also uses placeholder)
-============================================================ -->
-
-<!-- ── 1. ADDRESS / HOURS / PHONE STRIP ──────────────────────── -->
-<section class="mdso-contact-info-strip mb-5" style="background:#f8f5f0;border-top:3px solid #C99C37;border-bottom:1px solid #d9d3c8;padding:2rem 1.5rem;border-radius:4px">
-  <div class="row text-center">
-    <div class="col-6 col-md-3 mb-3 mb-md-0">
-      <div class="mdso-info-icon mb-2" style="display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:#16482F;color:#fff;font-size:1.2rem">📍</div>
-      <h6 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#623A18;font-size:.85rem;margin:0 0 .35rem">Sheriff's Office Address</h6>
-      <p style="font-size:.85rem;color:#444;margin:0;line-height:1.45">9105 NW 25th Street<br>Doral, FL 33172</p>
-    </div>
-    <div class="col-6 col-md-3 mb-3 mb-md-0">
-      <div class="mdso-info-icon mb-2" style="display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:#16482F;color:#fff;font-size:1.2rem">🕒</div>
-      <h6 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#623A18;font-size:.85rem;margin:0 0 .35rem">Hours of Operation</h6>
-      <p style="font-size:.85rem;color:#444;margin:0;line-height:1.45">Monday – Friday<br>8 a.m. – 5 p.m.</p>
-    </div>
-    <div class="col-6 col-md-3">
-      <div class="mdso-info-icon mb-2" style="display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:#9c2f1e;color:#fff;font-size:1.2rem">⚠</div>
-      <h6 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#623A18;font-size:.85rem;margin:0 0 .35rem">Emergency</h6>
-      <p style="font-size:.85rem;color:#444;margin:0;line-height:1.45"><a href="tel:911" style="color:#9c2f1e;font-weight:700;font-size:1.05rem;text-decoration:none">Call 911</a></p>
-    </div>
-    <div class="col-6 col-md-3">
-      <div class="mdso-info-icon mb-2" style="display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:#623A18;color:#C99C37;font-size:1.2rem">☎</div>
-      <h6 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#623A18;font-size:.85rem;margin:0 0 .35rem">Non-Emergency</h6>
-      <p style="font-size:.85rem;color:#444;margin:0;line-height:1.45"><a href="tel:3057437433" style="color:#623A18;font-weight:600;text-decoration:none">305-SHERIFF<br>(305-743-7433)</a></p>
-    </div>
-  </div>
-</section>
-
-<!-- ── 2. OFFICE OF THE SHERIFF ───────────────────────────────── -->
-<section class="mdso-org-tier mb-5" data-mdso-reveal>
-  <div class="mdso-tier-header mb-4" style="border-bottom:2px solid #16482F;padding-bottom:.5rem">
-    <p style="font-family:'Barlow Condensed',sans-serif;font-size:.7rem;color:#16482F;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin:0 0 .15rem">Executive Command</p>
-    <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;margin:0;font-size:1.75rem;line-height:1.05">Office of the Sheriff</h2>
-  </div>
-
-  <div class="row mb-2">
-    <div class="col-12 mb-4" data-mdso-reveal>
-      <div class="mdso-leader-card-featured h-100" style="background:linear-gradient(135deg,#3e2510 0%,#623A18 60%,#7d4d25 100%);color:#fff;border-radius:6px;overflow:hidden;border:2px solid #C99C37;box-shadow:0 8px 28px rgba(62,37,16,.25)">
-        <div class="row no-gutters h-100 align-items-stretch">
-          <div class="col-12 col-md-4">
-            <!-- IMG-COUNTY: https://www.miamidade.gov/resources-sheriff/images/Bio/rosie-cordero-stutz.jpg -->
-            <img src="https://www.miamidade.gov/resources-sheriff/images/Bio/rosie-cordero-stutz.jpg" alt="Rosie Cordero-Stutz" style="width:100%;height:100%;object-fit:cover;object-position:center top;min-height:320px;border-right:3px solid #C99C37;display:block">
-          </div>
-          <div class="col-12 col-md-8 p-4 d-flex flex-column">
-            <p style="font-family:'Barlow Condensed',sans-serif;font-size:.7rem;color:#C99C37;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 .4rem">Sheriff</p>
-            <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#fff;font-size:1.65rem;line-height:1.05;margin:0 0 .75rem">Rosie Cordero-Stutz</h3>
-            <p style="font-size:.9rem;color:rgba(255,255,255,.88);line-height:1.55;margin:0 0 1rem;flex-grow:1">Sheriff Rosie has dedicated over 29 years to the law enforcement profession, rising through the ranks from police officer to assistant director. This has given her a profound understanding of serving her community and its unique needs and challenges.</p>
-            <div style="border-top:1px solid rgba(201,156,55,.4);padding-top:.75rem;font-size:.85rem">
-              <div style="margin-bottom:.3rem"><span style="color:#C99C37">📞</span> <a href="tel:3054713518" style="color:#fff;text-decoration:none">305-471-3518</a></div>
-              <div><span style="color:#C99C37">✉</span> <a href="mailto:sheriffrosie@mdso.com" style="color:#fff;text-decoration:none">sheriffrosie@mdso.com</a></div>
-              <a href="/sheriff/about-mdso/biography/mdso-sheriff.page" style="display:inline-block;margin-top:.6rem;font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#C99C37;text-decoration:none;border-bottom:1px solid #C99C37;padding-bottom:2px">Read the Bio →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <p style="font-family:'Barlow Condensed',sans-serif;font-size:.75rem;color:#623A18;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 1rem;padding-left:.25rem">Sheriff's Office Staff &amp; Advisors</p>
-  <div class="row mdso-stagger">
-      <div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay:0.06s" data-mdso-reveal>
-        <div class="card card-mdso-gold-accent h-100" style="overflow:hidden;box-shadow:0 4px 16px rgba(62,37,16,.1)">
-          <!-- IMG-COUNTY: https://www.miamidade.gov/resources-sheriff/images/Bio/mark-rosenberg.jpg -->
-          <img src="https://www.miamidade.gov/resources-sheriff/images/Bio/mark-rosenberg.jpg" alt="Rabbi Mark Rosenberg" style="width:100%;height:240px;object-fit:cover;object-position:center top;display:block">
-          <div class="p-3">
-            <p style="font-family:'Barlow Condensed',sans-serif;font-size:.65rem;color:#C99C37;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 .25rem">Senior Advisor to the Sheriff/Chief Chaplain</p>
-            <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;font-size:1rem;line-height:1.1;margin:0 0 .35rem">Rabbi Mark Rosenberg</h5>
-            
-            <div style="font-size:.78rem;color:#444;margin-bottom:.2rem"><span style="color:#16482F">📞</span> <a href="tel:3054712625" style="color:#444;text-decoration:none">305-471-2625</a></div>
-            <div style="font-size:.78rem;color:#444"><span style="color:#16482F">✉</span> <a href="mailto:mrosenberg@mdso.com" style="color:#444;text-decoration:none">mrosenberg@mdso.com</a></div>
-            <a href="/sheriff/about-mdso/biography/senior-advisor.page" style="display:inline-block;margin-top:.5rem;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#623A18;text-decoration:none;border-bottom:1px solid #C99C37;padding-bottom:1px">Read the Bio →</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay:0.12s" data-mdso-reveal>
-        <div class="card card-mdso-gold-accent h-100" style="overflow:hidden;box-shadow:0 4px 16px rgba(62,37,16,.1)">
-          <!-- IMG-COUNTY: https://www.miamidade.gov/resources-sheriff/images/Bio/christine-del-portillo.jpg -->
-          <img src="https://www.miamidade.gov/resources-sheriff/images/Bio/christine-del-portillo.jpg" alt="Christine Del Portillo" style="width:100%;height:240px;object-fit:cover;object-position:center top;display:block">
-          <div class="p-3">
-            <p style="font-family:'Barlow Condensed',sans-serif;font-size:.65rem;color:#C99C37;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 .25rem">Head of Government &amp; External Affairs</p>
-            <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;font-size:1rem;line-height:1.1;margin:0 0 .35rem">Christine Del Portillo</h5>
-            
-            <div style="font-size:.78rem;color:#444;margin-bottom:.2rem"><span style="color:#16482F">📞</span> <a href="tel:3054711977" style="color:#444;text-decoration:none">305-471-1977</a></div>
-            <div style="font-size:.78rem;color:#444"><span style="color:#16482F">✉</span> <a href="mailto:cdp@mdso.com" style="color:#444;text-decoration:none">cdp@mdso.com</a></div>
-            <a href="/sheriff/about-mdso/biography/head-of-government-external-affairs.page" style="display:inline-block;margin-top:.5rem;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#623A18;text-decoration:none;border-bottom:1px solid #C99C37;padding-bottom:1px">Read the Bio →</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay:0.18s" data-mdso-reveal>
-        <div class="card card-mdso-gold-accent h-100" style="overflow:hidden;box-shadow:0 4px 16px rgba(62,37,16,.1)">
-          <!-- IMG-COUNTY: https://www.miamidade.gov/resources-sheriff/images/Bio/idalys-prieto.jpg -->
-          <img src="https://www.miamidade.gov/resources-sheriff/images/Bio/idalys-prieto.jpg" alt="Idalys Prieto" style="width:100%;height:240px;object-fit:cover;object-position:center top;display:block">
-          <div class="p-3">
-            <p style="font-family:'Barlow Condensed',sans-serif;font-size:.65rem;color:#C99C37;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 .25rem">Executive Aide to the Sheriff</p>
-            <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;font-size:1rem;line-height:1.1;margin:0 0 .35rem">Idalys Prieto</h5>
-            
-            <div style="font-size:.78rem;color:#444;margin-bottom:.2rem"><span style="color:#16482F">📞</span> <a href="tel:3054713272" style="color:#444;text-decoration:none">305-471-3272</a></div>
-            <div style="font-size:.78rem;color:#444"><span style="color:#16482F">✉</span> <a href="mailto:iprieto@mdso.com" style="color:#444;text-decoration:none">iprieto@mdso.com</a></div>
-            <a href="/sheriff/about-mdso/biography/executive-aide-to-the-sheriff.page" style="display:inline-block;margin-top:.5rem;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#623A18;text-decoration:none;border-bottom:1px solid #C99C37;padding-bottom:1px">Read the Bio →</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay:0.24s" data-mdso-reveal>
-        <div class="card card-mdso-gold-accent h-100" style="overflow:hidden;box-shadow:0 4px 16px rgba(62,37,16,.1)">
-          <!-- IMG-COUNTY: https://www.miamidade.gov/resources-sheriff/images/Bio/karin-bobe-colon.jpg -->
-          <img src="https://www.miamidade.gov/resources-sheriff/images/Bio/karin-bobe-colon.jpg" alt="Karin Bobe-Colon" style="width:100%;height:240px;object-fit:cover;object-position:center top;display:block">
-          <div class="p-3">
-            <p style="font-family:'Barlow Condensed',sans-serif;font-size:.65rem;color:#C99C37;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 .25rem">Executive Officer to the Sheriff</p>
-            <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;font-size:1rem;line-height:1.1;margin:0 0 .35rem">Karin Bobe-Colon</h5>
-            
-            <div style="font-size:.78rem;color:#444;margin-bottom:.2rem"><span style="color:#16482F">📞</span> <a href="tel:7862083720" style="color:#444;text-decoration:none">786-208-3720</a></div>
-            <div style="font-size:.78rem;color:#444"><span style="color:#16482F">✉</span> <a href="mailto:kbobe@mdso.com" style="color:#444;text-decoration:none">kbobe@mdso.com</a></div>
-            <a href="/sheriff/about-mdso/biography/executive-officer-to-the-sheriff.page" style="display:inline-block;margin-top:.5rem;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#623A18;text-decoration:none;border-bottom:1px solid #C99C37;padding-bottom:1px">Read the Bio →</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay:0.3s" data-mdso-reveal>
-        <div class="card card-mdso-gold-accent h-100" style="overflow:hidden;box-shadow:0 4px 16px rgba(62,37,16,.1)">
-          <!-- IMG-COUNTY: https://www.miamidade.gov/resources-sheriff/images/Bio/janet-lewis.jpg -->
-          <img src="https://www.miamidade.gov/resources-sheriff/images/Bio/janet-lewis.jpg" alt="Janet Lewis" style="width:100%;height:240px;object-fit:cover;object-position:center top;display:block">
-          <div class="p-3">
-            <p style="font-family:'Barlow Condensed',sans-serif;font-size:.65rem;color:#C99C37;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 .25rem">General Counsel</p>
-            <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;font-size:1rem;line-height:1.1;margin:0 0 .35rem">Janet Lewis</h5>
-            <p style="font-size:.78rem;color:#623A18;font-weight:600;margin:.4rem 0 .65rem;line-height:1.3">General Counsel&#x27;s Office</p>
-            <div style="font-size:.78rem;color:#444;margin-bottom:.2rem"><span style="color:#16482F">📞</span> <a href="tel:3054711800" style="color:#444;text-decoration:none">305-471-1800</a></div>
-            <div style="font-size:.78rem;color:#444"><span style="color:#16482F">✉</span> <a href="mailto:jlewis@mdso.com" style="color:#444;text-decoration:none">jlewis@mdso.com</a></div>
-            <a href="/sheriff/about-mdso/biography/general-counsel.page" style="display:inline-block;margin-top:.5rem;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#623A18;text-decoration:none;border-bottom:1px solid #C99C37;padding-bottom:1px">Read the Bio →</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay:0.36s" data-mdso-reveal>
-        <div class="card card-mdso-gold-accent h-100" style="overflow:hidden;box-shadow:0 4px 16px rgba(62,37,16,.1)">
-          <!-- IMG-COUNTY: https://www.miamidade.gov/resources-sheriff/images/Bio/olenka-j-ryan-guerra.jpg -->
-          <img src="https://www.miamidade.gov/resources-sheriff/images/Bio/olenka-j-ryan-guerra.jpg" alt="Olenka J. Ryan-Guerra" style="width:100%;height:240px;object-fit:cover;object-position:center top;display:block">
-          <div class="p-3">
-            <p style="font-family:'Barlow Condensed',sans-serif;font-size:.65rem;color:#C99C37;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 .25rem">Lieutenant</p>
-            <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;font-size:1rem;line-height:1.1;margin:0 0 .35rem">Olenka J. Ryan-Guerra</h5>
-            <p style="font-size:.78rem;color:#623A18;font-weight:600;margin:.4rem 0 .65rem;line-height:1.3">Public Affairs Office</p>
-            <div style="font-size:.78rem;color:#444;margin-bottom:.2rem"><span style="color:#16482F">📞</span> <a href="tel:3054711900" style="color:#444;text-decoration:none">305-471-1900</a></div>
-            <div style="font-size:.78rem;color:#444"><span style="color:#16482F">✉</span> <a href="mailto:og@mdso.com" style="color:#444;text-decoration:none">og@mdso.com</a></div>
-            <a href="/sheriff/about-mdso/biography/public-affairs-office-lieutenant.page" style="display:inline-block;margin-top:.5rem;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#623A18;text-decoration:none;border-bottom:1px solid #C99C37;padding-bottom:1px">Read the Bio →</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay:0.42s" data-mdso-reveal>
-        <div class="card card-mdso-gold-accent h-100" style="overflow:hidden;box-shadow:0 4px 16px rgba(62,37,16,.1)">
-          <!-- IMG-COUNTY: https://www.miamidade.gov/resources-sheriff/images/Bio/george-perera.jpg -->
-          <img src="https://www.miamidade.gov/resources-sheriff/images/Bio/george-perera.jpg" alt="George S. Perera Jr." style="width:100%;height:240px;object-fit:cover;object-position:center top;display:block">
-          <div class="p-3">
-            <p style="font-family:'Barlow Condensed',sans-serif;font-size:.65rem;color:#C99C37;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 .25rem">Division Chief</p>
-            <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;font-size:1rem;line-height:1.1;margin:0 0 .35rem">George S. Perera Jr.</h5>
-            <p style="font-size:.78rem;color:#623A18;font-weight:600;margin:.4rem 0 .65rem;line-height:1.3">Technology &amp; Information Security Division</p>
-            <div style="font-size:.78rem;color:#444;margin-bottom:.2rem"><span style="color:#16482F">📞</span> <a href="tel:3058635080" style="color:#444;text-decoration:none">305-863-5080</a></div>
-            
-            
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay:0.48s" data-mdso-reveal>
-        <div class="card card-mdso-gold-accent h-100" style="overflow:hidden;box-shadow:0 4px 16px rgba(62,37,16,.1)">
-          <!-- IMG-PENDING: https://www.miamidade.gov/resources-sheriff/images/Photos/mdso-silhouette01.png -->
-          <div style="height:240px;background:linear-gradient(135deg,#f0ebe3,#d9d3c8);display:flex;align-items:center;justify-content:center;color:rgba(98,58,24,.2);font-size:4rem">👤</div>
-          <div class="p-3">
-            <p style="font-family:'Barlow Condensed',sans-serif;font-size:.65rem;color:#C99C37;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 .25rem">Commander</p>
-            <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;font-size:1rem;line-height:1.1;margin:0 0 .35rem">Mailyn Sola-Castellanos</h5>
-            <p style="font-size:.78rem;color:#623A18;font-weight:600;margin:.4rem 0 .65rem;line-height:1.3">Employee Mental Wellness Office</p>
-            <div style="font-size:.78rem;color:#444;margin-bottom:.2rem"><span style="color:#16482F">📞</span> <a href="tel:3055911106" style="color:#444;text-decoration:none">305-591-1106</a></div>
-            
-            <a href="/sheriff/about-mdso/biography/employee-mental-wellness-office-commander.page" style="display:inline-block;margin-top:.5rem;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#623A18;text-decoration:none;border-bottom:1px solid #C99C37;padding-bottom:1px">Read the Bio →</a>
-          </div>
-        </div>
-      </div>
-  </div>
-</section>
-
-<!-- ── 3. OFFICE OF THE UNDERSHERIFF ──────────────────────────── -->
-<section class="mdso-org-tier mb-5" data-mdso-reveal>
-  <div class="mdso-tier-header mb-4" style="border-bottom:2px solid #16482F;padding-bottom:.5rem">
-    <p style="font-family:'Barlow Condensed',sans-serif;font-size:.7rem;color:#16482F;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin:0 0 .15rem">Executive Command</p>
-    <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;margin:0;font-size:1.75rem;line-height:1.05">Office of the Undersheriff</h2>
-  </div>
-
-  <div class="row mb-2">
-    <div class="col-12 mb-4" data-mdso-reveal>
-      <div class="mdso-leader-card-featured h-100" style="background:linear-gradient(135deg,#3e2510 0%,#623A18 60%,#7d4d25 100%);color:#fff;border-radius:6px;overflow:hidden;border:2px solid #C99C37;box-shadow:0 8px 28px rgba(62,37,16,.25)">
-        <div class="row no-gutters h-100 align-items-stretch">
-          <div class="col-12 col-md-4">
-            <!-- IMG-COUNTY: https://www.miamidade.gov/resources-sheriff/images/Bio/christopher-carothers.jpg -->
-            <img src="https://www.miamidade.gov/resources-sheriff/images/Bio/christopher-carothers.jpg" alt="Christopher Carothers" style="width:100%;height:100%;object-fit:cover;object-position:center top;min-height:320px;border-right:3px solid #C99C37;display:block">
-          </div>
-          <div class="col-12 col-md-8 p-4 d-flex flex-column">
-            <p style="font-family:'Barlow Condensed',sans-serif;font-size:.7rem;color:#C99C37;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 .4rem">Undersheriff</p>
-            <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#fff;font-size:1.65rem;line-height:1.05;margin:0 0 .75rem">Christopher Carothers</h3>
-            <p style="font-size:.9rem;color:rgba(255,255,255,.88);line-height:1.55;margin:0 0 1rem;flex-grow:1">Christopher Carothers began his career with the Miami-Dade Police Department in 1996.</p>
-            <div style="border-top:1px solid rgba(201,156,55,.4);padding-top:.75rem;font-size:.85rem">
-              <div style="margin-bottom:.3rem"><span style="color:#C99C37">📞</span> <a href="tel:3054712950" style="color:#fff;text-decoration:none">305-471-2950</a></div>
-              <div><span style="color:#C99C37">✉</span> <a href="mailto:ccarothers@mdso.com" style="color:#fff;text-decoration:none">ccarothers@mdso.com</a></div>
-              <a href="/sheriff/about-mdso/biography/mdso-undersheriff.page" style="display:inline-block;margin-top:.6rem;font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#C99C37;text-decoration:none;border-bottom:1px solid #C99C37;padding-bottom:2px">Read the Bio →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <p style="font-family:'Barlow Condensed',sans-serif;font-size:.75rem;color:#623A18;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 1rem;padding-left:.25rem">Undersheriff's Office Staff</p>
-  <div class="row mdso-stagger">
-      <div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay:0.06s" data-mdso-reveal>
-        <div class="card card-mdso-gold-accent h-100" style="overflow:hidden;box-shadow:0 4px 16px rgba(62,37,16,.1)">
-          <!-- IMG-COUNTY: https://www.miamidade.gov/resources-sheriff/images/Bio/gustavo-knoepffler.jpg -->
-          <img src="https://www.miamidade.gov/resources-sheriff/images/Bio/gustavo-knoepffler.jpg" alt="Gustavo Knoepffler" style="width:100%;height:240px;object-fit:cover;object-position:center top;display:block">
-          <div class="p-3">
-            <p style="font-family:'Barlow Condensed',sans-serif;font-size:.65rem;color:#C99C37;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 .25rem">Executive Director</p>
-            <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;font-size:1rem;line-height:1.1;margin:0 0 .35rem">Gustavo Knoepffler</h5>
-            <p style="font-size:.78rem;color:#623A18;font-weight:600;margin:.4rem 0 .65rem;line-height:1.3">Office of Administration</p>
-            <div style="font-size:.78rem;color:#444;margin-bottom:.2rem"><span style="color:#16482F">📞</span> <a href="tel:3054713665" style="color:#444;text-decoration:none">305-471-3665</a></div>
-            <div style="font-size:.78rem;color:#444"><span style="color:#16482F">✉</span> <a href="mailto:gknoepffler@mdso.com" style="color:#444;text-decoration:none">gknoepffler@mdso.com</a></div>
-            <a href="/sheriff/about-mdso/biography/office-of-administration-executive-director.page" style="display:inline-block;margin-top:.5rem;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#623A18;text-decoration:none;border-bottom:1px solid #C99C37;padding-bottom:1px">Read the Bio →</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay:0.12s" data-mdso-reveal>
-        <div class="card card-mdso-gold-accent h-100" style="overflow:hidden;box-shadow:0 4px 16px rgba(62,37,16,.1)">
-          <!-- IMG-COUNTY: https://www.miamidade.gov/resources-sheriff/images/Bio/ronald-rebozo.jpg -->
-          <img src="https://www.miamidade.gov/resources-sheriff/images/Bio/ronald-rebozo.jpg" alt="Ronald Rebozo" style="width:100%;height:240px;object-fit:cover;object-position:center top;display:block">
-          <div class="p-3">
-            <p style="font-family:'Barlow Condensed',sans-serif;font-size:.65rem;color:#C99C37;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 .25rem">Division Chief</p>
-            <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;font-size:1rem;line-height:1.1;margin:0 0 .35rem">Ronald Rebozo</h5>
-            <p style="font-size:.78rem;color:#623A18;font-weight:600;margin:.4rem 0 .65rem;line-height:1.3">Professional Standards Division</p>
-            <div style="font-size:.78rem;color:#444;margin-bottom:.2rem"><span style="color:#16482F">📞</span> <a href="tel:3056277100" style="color:#444;text-decoration:none">305-627-7100</a></div>
-            <div style="font-size:.78rem;color:#444"><span style="color:#16482F">✉</span> <a href="mailto:rrebozo@mdso.com" style="color:#444;text-decoration:none">rrebozo@mdso.com</a></div>
-            <a href="/sheriff/about-mdso/biography/professional-standards-division-chief.page" style="display:inline-block;margin-top:.5rem;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#623A18;text-decoration:none;border-bottom:1px solid #C99C37;padding-bottom:1px">Read the Bio →</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay:0.18s" data-mdso-reveal>
-        <div class="card card-mdso-gold-accent h-100" style="overflow:hidden;box-shadow:0 4px 16px rgba(62,37,16,.1)">
-          <!-- IMG-COUNTY: https://www.miamidade.gov/resources-sheriff/images/Bio/annette-mccully.jpg -->
-          <img src="https://www.miamidade.gov/resources-sheriff/images/Bio/annette-mccully.jpg" alt="Annette McCully" style="width:100%;height:240px;object-fit:cover;object-position:center top;display:block">
-          <div class="p-3">
-            <p style="font-family:'Barlow Condensed',sans-serif;font-size:.65rem;color:#C99C37;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 .25rem">Staff Support Manager</p>
-            <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;font-size:1rem;line-height:1.1;margin:0 0 .35rem">Annette McCully</h5>
-            
-            <div style="font-size:.78rem;color:#444;margin-bottom:.2rem"><span style="color:#16482F">📞</span> <a href="tel:3059702776" style="color:#444;text-decoration:none">305-970-2776</a></div>
-            <div style="font-size:.78rem;color:#444"><span style="color:#16482F">✉</span> <a href="mailto:amccully@mdso.com" style="color:#444;text-decoration:none">amccully@mdso.com</a></div>
-            
-          </div>
-        </div>
-      </div>
-  </div>
-</section>
-
-<!-- ── 4. OFFICE OF ADMINISTRATION (bureau directory; no headshots on legacy) ── -->
-<section class="mdso-org-tier mb-5" data-mdso-reveal>
-  <div class="mdso-tier-header mb-4" style="border-bottom:2px solid #C99C37;padding-bottom:.5rem">
-    <p style="font-family:'Barlow Condensed',sans-serif;font-size:.7rem;color:#C99C37;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin:0 0 .15rem">Administrative Command</p>
-    <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;margin:0;font-size:1.75rem;line-height:1.05">Office of Administration</h2>
-  </div>
-
-  <div class="mdso-bureau-list" style="background:#f8f5f0;border-left:4px solid #C99C37;padding:1.5rem 1.75rem;border-radius:4px">
-  <ul style="list-style:none;padding:0;margin:0">
-        <li style="margin-bottom:.45rem"><a href="/sheriff/about-mdso/management-budget-office.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37;font-size:.92rem;font-weight:600">→ Management &amp; Budget Office</a> <span style="color:#888;font-size:.85rem;margin-left:.5rem">305-471-2520</span></li>
-        <li style="margin-bottom:.45rem"><a href="/sheriff/about-mdso/finance-procurement-office.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37;font-size:.92rem;font-weight:600">→ Finance &amp; Procurement Office</a> <span style="color:#888;font-size:.85rem;margin-left:.5rem">305-471-3665</span></li>
-        <li style="margin-bottom:.45rem"><a href="/sheriff/about-mdso/facilities-management-office.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37;font-size:.92rem;font-weight:600">→ Facilities Management Office</a> <span style="color:#888;font-size:.85rem;margin-left:.5rem">305-471-3665</span></li>
-        <li style="margin-bottom:.45rem"><a href="/sheriff/about-mdso/fleet-management-office.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37;font-size:.92rem;font-weight:600">→ Fleet Management Office</a> <span style="color:#888;font-size:.85rem;margin-left:.5rem">305-471-2001</span></li>
-        <li style="margin-bottom:.45rem"><a href="/sheriff/about-mdso/human-resources-office.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37;font-size:.92rem;font-weight:600">→ Human Resources Office</a> <span style="color:#888;font-size:.85rem;margin-left:.5rem">305-471-1950</span></li>
-  </ul>
-  </div>
-</section>
-
-<!-- ── 5. PROFESSIONAL STANDARDS DIVISION (bureau directory; no headshots on legacy) ── -->
-<section class="mdso-org-tier mb-5" data-mdso-reveal>
-  <div class="mdso-tier-header mb-4" style="border-bottom:2px solid #C99C37;padding-bottom:.5rem">
-    <p style="font-family:'Barlow Condensed',sans-serif;font-size:.7rem;color:#C99C37;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin:0 0 .15rem">Oversight</p>
-    <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;margin:0;font-size:1.75rem;line-height:1.05">Professional Standards Division</h2>
-  </div>
-
-  <div class="mdso-bureau-list" style="background:#f8f5f0;border-left:4px solid #C99C37;padding:1.5rem 1.75rem;border-radius:4px">
-  <ul style="list-style:none;padding:0;margin:0">
-        <li style="margin-bottom:.45rem"><a href="/sheriff/about-mdso/internal-affairs-office.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37;font-size:.92rem;font-weight:600">→ Internal Affairs Office</a> <span style="color:#888;font-size:.85rem;margin-left:.5rem">305-627-7100</span></li>
-        <li style="margin-bottom:.45rem"><a href="/sheriff/training-center/mdstc.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37;font-size:.92rem;font-weight:600">→ Miami-Dade Sheriff&#x27;s Training Center</a> <span style="color:#888;font-size:.85rem;margin-left:.5rem">305-715-5000</span></li>
-  </ul>
-  </div>
-</section>
-
-<!-- ── PATROL SERVICES ── -->
-<section class="mdso-org-tier mb-5" data-mdso-reveal>
-  <div class="mdso-tier-header mb-4" style="border-bottom:2px solid #C99C37;padding-bottom:.5rem">
-    <p style="font-family:'Barlow Condensed',sans-serif;font-size:.7rem;color:#C99C37;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin:0 0 .15rem">Field Operations</p>
-    <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;margin:0;font-size:1.75rem;line-height:1.05">Patrol Services</h2>
-  </div>
-
-  <div class="row mb-2">
-    <div class="col-12 mb-4" data-mdso-reveal>
-      <div class="mdso-leader-card-featured h-100" style="background:linear-gradient(135deg,#3e2510 0%,#623A18 60%,#7d4d25 100%);color:#fff;border-radius:6px;overflow:hidden;border:2px solid #C99C37;box-shadow:0 8px 28px rgba(62,37,16,.25)">
-        <div class="row no-gutters h-100 align-items-stretch">
-          <div class="col-12 col-md-4">
-            <!-- IMG-COUNTY: https://www.miamidade.gov/resources-sheriff/images/Bio/fernand-charles-jr.jpg -->
-            <img src="https://www.miamidade.gov/resources-sheriff/images/Bio/fernand-charles-jr.jpg" alt="Fernand Charles Jr." style="width:100%;height:100%;object-fit:cover;object-position:center top;min-height:320px;border-right:3px solid #C99C37;display:block">
-          </div>
-          <div class="col-12 col-md-8 p-4 d-flex flex-column">
-            <p style="font-family:'Barlow Condensed',sans-serif;font-size:.7rem;color:#C99C37;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 .4rem">Assistant Sheriff</p>
-            <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#fff;font-size:1.65rem;line-height:1.05;margin:0 0 .75rem">Fernand Charles Jr.</h3>
-            <p style="font-size:.9rem;color:rgba(255,255,255,.88);line-height:1.55;margin:0 0 1rem;flex-grow:1">Patrol Services</p>
-            <div style="border-top:1px solid rgba(201,156,55,.4);padding-top:.75rem;font-size:.85rem">
-              <div style="margin-bottom:.3rem"><span style="color:#C99C37">📞</span> <a href="tel:3054712350" style="color:#fff;text-decoration:none">305-471-2350</a></div>
-              <div><span style="color:#C99C37">✉</span> <a href="mailto:fcharlesjr@mdso.com" style="color:#fff;text-decoration:none">fcharlesjr@mdso.com</a></div>
-              <a href="/sheriff/about-mdso/biography/patrol-services-assistant-sheriff.page" style="display:inline-block;margin-top:.6rem;font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#C99C37;text-decoration:none;border-bottom:1px solid #C99C37;padding-bottom:2px">Read the Bio →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  <p style="font-family:'Barlow Condensed',sans-serif;font-size:.75rem;color:#623A18;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:1.5rem 0 1rem;padding-left:.25rem">Division Leadership</p>
-  <div class="row mdso-stagger">
-      <div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay:0.06s" data-mdso-reveal>
-        <div class="card card-mdso-gold-accent h-100" style="overflow:hidden;box-shadow:0 4px 16px rgba(62,37,16,.1)">
-          <!-- IMG-COUNTY: https://www.miamidade.gov/resources-sheriff/images/Bio/tiffany-s-wesley.jpg -->
-          <img src="https://www.miamidade.gov/resources-sheriff/images/Bio/tiffany-s-wesley.jpg" alt="Tiffany S. Wesley" style="width:100%;height:240px;object-fit:cover;object-position:center top;display:block">
-          <div class="p-3">
-            <p style="font-family:'Barlow Condensed',sans-serif;font-size:.65rem;color:#C99C37;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 .25rem">Division Chief</p>
-            <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;font-size:1rem;line-height:1.1;margin:0 0 .35rem">Tiffany S. Wesley</h5>
-            <p style="font-size:.78rem;color:#623A18;font-weight:600;margin:.4rem 0 .65rem;line-height:1.3">North Operations Division</p>
-            <div style="font-size:.78rem;color:#444;margin-bottom:.2rem"><span style="color:#16482F">📞</span> <a href="tel:3054712945" style="color:#444;text-decoration:none">305-471-2945</a></div>
-            <div style="font-size:.78rem;color:#444"><span style="color:#16482F">✉</span> <a href="mailto:tswesley@mdso.com" style="color:#444;text-decoration:none">tswesley@mdso.com</a></div>
-            <a href="/sheriff/about-mdso/biography/north-operations-division-chief.page" style="display:inline-block;margin-top:.5rem;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#623A18;text-decoration:none;border-bottom:1px solid #C99C37;padding-bottom:1px">Read the Bio →</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay:0.12s" data-mdso-reveal>
-        <div class="card card-mdso-gold-accent h-100" style="overflow:hidden;box-shadow:0 4px 16px rgba(62,37,16,.1)">
-          <!-- IMG-COUNTY: https://www.miamidade.gov/resources-sheriff/images/Bio/raul-jaime-nunez.jpg -->
-          <img src="https://www.miamidade.gov/resources-sheriff/images/Bio/raul-jaime-nunez.jpg" alt="Raul &quot;Jaime&quot; Nunez" style="width:100%;height:240px;object-fit:cover;object-position:center top;display:block">
-          <div class="p-3">
-            <p style="font-family:'Barlow Condensed',sans-serif;font-size:.65rem;color:#C99C37;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 .25rem">Division Chief</p>
-            <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;font-size:1rem;line-height:1.1;margin:0 0 .35rem">Raul &quot;Jaime&quot; Nunez</h5>
-            <p style="font-size:.78rem;color:#623A18;font-weight:600;margin:.4rem 0 .65rem;line-height:1.3">South Operations Division</p>
-            <div style="font-size:.78rem;color:#444;margin-bottom:.2rem"><span style="color:#16482F">📞</span> <a href="tel:3054713165" style="color:#444;text-decoration:none">305-471-3165</a></div>
-            <div style="font-size:.78rem;color:#444"><span style="color:#16482F">✉</span> <a href="mailto:rjnunez@mdso.com" style="color:#444;text-decoration:none">rjnunez@mdso.com</a></div>
-            <a href="/sheriff/about-mdso/biography/south-operations-division-chief.page" style="display:inline-block;margin-top:.5rem;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#623A18;text-decoration:none;border-bottom:1px solid #C99C37;padding-bottom:1px">Read the Bio →</a>
-          </div>
-        </div>
-      </div>
-  </div>
-  <p style="font-family:'Barlow Condensed',sans-serif;font-size:.75rem;color:#623A18;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:1.25rem 0 1rem;padding-left:.25rem">Bureaus &amp; District Stations</p>
-  <div class="row">
-      <div class="col-12 col-md-6 mb-3">
-        <div style="background:#f0ebe3;border-left:3px solid #16482F;padding:1.25rem 1.5rem;border-radius:4px;height:100%">
-          <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#16482F;font-size:1rem;margin:0 0 .75rem">North Operations Division</h5>
-          <ul style="list-style:none;padding:0;margin:0;font-size:.88rem;line-height:1.85">
-            <li><a href="/sheriff/about-mdso/intracoastal-district-station.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37">→ Intracoastal District Station</a></li>
-            <li><a href="/sheriff/about-mdso/midwest-district-station.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37">→ Midwest District Station</a></li>
-            <li><a href="/sheriff/about-mdso/northside-district-station.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37">→ Northside District Station</a></li>
-            <li><a href="/sheriff/about-mdso/northwest-district-station.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37">→ Northwest District Station</a></li>
-            <li><a href="/sheriff/about-mdso/government-services-bureau.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37">→ Government Services Bureau</a></li>
-            <li><a href="/sheriff/about-mdso/miami-lakes-municipal-district.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37">→ Miami Lakes Municipal District</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-12 col-md-6 mb-3">
-        <div style="background:#f0ebe3;border-left:3px solid #16482F;padding:1.25rem 1.5rem;border-radius:4px;height:100%">
-          <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#16482F;font-size:1rem;margin:0 0 .75rem">South Operations Division</h5>
-          <ul style="list-style:none;padding:0;margin:0;font-size:.88rem;line-height:1.85">
-            <li><a href="/sheriff/about-mdso/hammocks-district-station.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37">→ Hammocks District Station</a></li>
-            <li><a href="/sheriff/about-mdso/kendall-district-station.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37">→ Kendall District Station</a></li>
-            <li><a href="/sheriff/about-mdso/south-district-station.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37">→ South District Station</a></li>
-            <li><a href="/sheriff/about-mdso/cutler-bay-municipal-district.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37">→ Cutler Bay Municipal District</a></li>
-            <li><a href="/sheriff/about-mdso/palmetto-bay-municipal-district.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37">→ Palmetto Bay Municipal District</a></li>
-          </ul>
-        </div>
-      </div>
-  </div>
-</section>
-
-<!-- ── SUPPORT SERVICES ── -->
-<section class="mdso-org-tier mb-5" data-mdso-reveal>
-  <div class="mdso-tier-header mb-4" style="border-bottom:2px solid #C99C37;padding-bottom:.5rem">
-    <p style="font-family:'Barlow Condensed',sans-serif;font-size:.7rem;color:#C99C37;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin:0 0 .15rem">Support & Logistics</p>
-    <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;margin:0;font-size:1.75rem;line-height:1.05">Support Services</h2>
-  </div>
-
-  <div class="row mb-2">
-    <div class="col-12 mb-4" data-mdso-reveal>
-      <div class="mdso-leader-card-featured h-100" style="background:linear-gradient(135deg,#3e2510 0%,#623A18 60%,#7d4d25 100%);color:#fff;border-radius:6px;overflow:hidden;border:2px solid #C99C37;box-shadow:0 8px 28px rgba(62,37,16,.25)">
-        <div class="row no-gutters h-100 align-items-stretch">
-          <div class="col-12 col-md-4">
-            <!-- IMG-COUNTY: https://www.miamidade.gov/resources-sheriff/images/Bio/andrew-glass.jpg -->
-            <img src="https://www.miamidade.gov/resources-sheriff/images/Bio/andrew-glass.jpg" alt="Andrew Glass" style="width:100%;height:100%;object-fit:cover;object-position:center top;min-height:320px;border-right:3px solid #C99C37;display:block">
-          </div>
-          <div class="col-12 col-md-8 p-4 d-flex flex-column">
-            <p style="font-family:'Barlow Condensed',sans-serif;font-size:.7rem;color:#C99C37;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 .4rem">Assistant Sheriff</p>
-            <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#fff;font-size:1.65rem;line-height:1.05;margin:0 0 .75rem">Andrew Glass</h3>
-            <p style="font-size:.9rem;color:rgba(255,255,255,.88);line-height:1.55;margin:0 0 1rem;flex-grow:1">Support Services</p>
-            <div style="border-top:1px solid rgba(201,156,55,.4);padding-top:.75rem;font-size:.85rem">
-              <div style="margin-bottom:.3rem"><span style="color:#C99C37">📞</span> <a href="tel:3054712622" style="color:#fff;text-decoration:none">305-471-2622</a></div>
-              <div><span style="color:#C99C37">✉</span> <a href="mailto:aglass@mdso.com" style="color:#fff;text-decoration:none">aglass@mdso.com</a></div>
-              <a href="/sheriff/about-mdso/biography/support-services-assistant-sheriff.page" style="display:inline-block;margin-top:.6rem;font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#C99C37;text-decoration:none;border-bottom:1px solid #C99C37;padding-bottom:2px">Read the Bio →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  <p style="font-family:'Barlow Condensed',sans-serif;font-size:.75rem;color:#623A18;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:1.5rem 0 1rem;padding-left:.25rem">Division Leadership</p>
-  <div class="row mdso-stagger">
-      <div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay:0.06s" data-mdso-reveal>
-        <div class="card card-mdso-gold-accent h-100" style="overflow:hidden;box-shadow:0 4px 16px rgba(62,37,16,.1)">
-          <!-- IMG-COUNTY: https://www.miamidade.gov/resources-sheriff/images/Bio/juan-villalba-jr.jpg -->
-          <img src="https://www.miamidade.gov/resources-sheriff/images/Bio/juan-villalba-jr.jpg" alt="Juan Villalba Jr." style="width:100%;height:240px;object-fit:cover;object-position:center top;display:block">
-          <div class="p-3">
-            <p style="font-family:'Barlow Condensed',sans-serif;font-size:.65rem;color:#C99C37;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 .25rem">Division Chief</p>
-            <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;font-size:1rem;line-height:1.1;margin:0 0 .35rem">Juan Villalba Jr.</h5>
-            <p style="font-size:.78rem;color:#623A18;font-weight:600;margin:.4rem 0 .65rem;line-height:1.3">Centralized Services Division</p>
-            <div style="font-size:.78rem;color:#444;margin-bottom:.2rem"><span style="color:#16482F">📞</span> <a href="tel:3054713663" style="color:#444;text-decoration:none">305-471-3663</a></div>
-            <div style="font-size:.78rem;color:#444"><span style="color:#16482F">✉</span> <a href="mailto:jvillalba@mdso.com" style="color:#444;text-decoration:none">jvillalba@mdso.com</a></div>
-            <a href="/sheriff/about-mdso/biography/centralized-services-division-chief.page" style="display:inline-block;margin-top:.5rem;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#623A18;text-decoration:none;border-bottom:1px solid #C99C37;padding-bottom:1px">Read the Bio →</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay:0.12s" data-mdso-reveal>
-        <div class="card card-mdso-gold-accent h-100" style="overflow:hidden;box-shadow:0 4px 16px rgba(62,37,16,.1)">
-          <!-- IMG-COUNTY: https://www.miamidade.gov/resources-sheriff/images/Bio/gina-beato-dominguez.jpg -->
-          <img src="https://www.miamidade.gov/resources-sheriff/images/Bio/gina-beato-dominguez.jpg" alt="Gina Beato-Dominguez" style="width:100%;height:240px;object-fit:cover;object-position:center top;display:block">
-          <div class="p-3">
-            <p style="font-family:'Barlow Condensed',sans-serif;font-size:.65rem;color:#C99C37;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 .25rem">Division Chief</p>
-            <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;font-size:1rem;line-height:1.1;margin:0 0 .35rem">Gina Beato-Dominguez</h5>
-            <p style="font-size:.78rem;color:#623A18;font-weight:600;margin:.4rem 0 .65rem;line-height:1.3">Planning &amp; Special Projects Office</p>
-            <div style="font-size:.78rem;color:#444;margin-bottom:.2rem"><span style="color:#16482F">📞</span> <a href="tel:3054712167" style="color:#444;text-decoration:none">305-471-2167</a></div>
-            <div style="font-size:.78rem;color:#444"><span style="color:#16482F">✉</span> <a href="mailto:gbeato@mdso.com" style="color:#444;text-decoration:none">gbeato@mdso.com</a></div>
-            <a href="/sheriff/about-mdso/biography/planning-and-special-projects-office-division-chief.page" style="display:inline-block;margin-top:.5rem;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#623A18;text-decoration:none;border-bottom:1px solid #C99C37;padding-bottom:1px">Read the Bio →</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay:0.18s" data-mdso-reveal>
-        <div class="card card-mdso-gold-accent h-100" style="overflow:hidden;box-shadow:0 4px 16px rgba(62,37,16,.1)">
-          <!-- IMG-COUNTY: https://www.miamidade.gov/resources-sheriff/images/Bio/stephanie-stoiloff.jpg -->
-          <img src="https://www.miamidade.gov/resources-sheriff/images/Bio/stephanie-stoiloff.jpg" alt="Stephanie L. Stoiloff" style="width:100%;height:240px;object-fit:cover;object-position:center top;display:block">
-          <div class="p-3">
-            <p style="font-family:'Barlow Condensed',sans-serif;font-size:.65rem;color:#C99C37;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 .25rem">Division Director</p>
-            <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;font-size:1rem;line-height:1.1;margin:0 0 .35rem">Stephanie L. Stoiloff</h5>
-            <p style="font-size:.78rem;color:#623A18;font-weight:600;margin:.4rem 0 .65rem;line-height:1.3">Forensic &amp; Technology Division</p>
-            <div style="font-size:.78rem;color:#444;margin-bottom:.2rem"><span style="color:#16482F">📞</span> <a href="tel:3054712675" style="color:#444;text-decoration:none">305-471-2675</a></div>
-            <div style="font-size:.78rem;color:#444"><span style="color:#16482F">✉</span> <a href="mailto:slstoiloff@mdso.com" style="color:#444;text-decoration:none">slstoiloff@mdso.com</a></div>
-            <a href="/sheriff/about-mdso/biography/forensic-and-technology-division-director.page" style="display:inline-block;margin-top:.5rem;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#623A18;text-decoration:none;border-bottom:1px solid #C99C37;padding-bottom:1px">Read the Bio →</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay:0.24s" data-mdso-reveal>
-        <div class="card card-mdso-gold-accent h-100" style="overflow:hidden;box-shadow:0 4px 16px rgba(62,37,16,.1)">
-          <!-- IMG-PENDING: https://www.miamidade.gov/resources-sheriff/images/Photos/mdso-silhouette01.png -->
-          <div style="height:240px;background:linear-gradient(135deg,#f0ebe3,#d9d3c8);display:flex;align-items:center;justify-content:center;color:rgba(98,58,24,.2);font-size:4rem">👤</div>
-          <div class="p-3">
-            <p style="font-family:'Barlow Condensed',sans-serif;font-size:.65rem;color:#C99C37;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 .25rem">Commander</p>
-            <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;font-size:1rem;line-height:1.1;margin:0 0 .35rem">Domingo Alfaro</h5>
-            <p style="font-size:.78rem;color:#623A18;font-weight:600;margin:.4rem 0 .65rem;line-height:1.3">Air Support Unit</p>
-            <div style="font-size:.78rem;color:#444;margin-bottom:.2rem"><span style="color:#16482F">📞</span> <a href="tel:3057437433" style="color:#444;text-decoration:none">305-743-7433</a></div>
-            
-            
-          </div>
-        </div>
-      </div>
-  </div>
-  <p style="font-family:'Barlow Condensed',sans-serif;font-size:.75rem;color:#623A18;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:1.25rem 0 1rem;padding-left:.25rem">Bureaus &amp; District Stations</p>
-  <div class="row">
-      <div class="col-12 col-md-6 mb-3">
-        <div style="background:#f0ebe3;border-left:3px solid #16482F;padding:1.25rem 1.5rem;border-radius:4px;height:100%">
-          <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#16482F;font-size:1rem;margin:0 0 .75rem">Centralized Services Division</h5>
-          <ul style="list-style:none;padding:0;margin:0;font-size:.88rem;line-height:1.85">
-            <li><a href="/sheriff/about-mdso/central-records-bureau.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37">→ Central Records Bureau</a></li>
-            <li><a href="/sheriff/about-mdso/communications.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37">→ Communications Bureau</a></li>
-            <li><a href="/sheriff/about-mdso/community-affairs-bureau.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37">→ Community Affairs Bureau</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-12 col-md-6 mb-3">
-        <div style="background:#f0ebe3;border-left:3px solid #16482F;padding:1.25rem 1.5rem;border-radius:4px;height:100%">
-          <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#16482F;font-size:1rem;margin:0 0 .75rem">Forensic &amp; Technology Division</h5>
-          <ul style="list-style:none;padding:0;margin:0;font-size:.88rem;line-height:1.85">
-            <li><a href="/sheriff/about-mdso/crime-scene-evidence-bureau.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37">→ Crime Scene and Evidence Bureau</a></li>
-          </ul>
-        </div>
-      </div>
-  </div>
-</section>
-
-<!-- ── INVESTIGATIVE & SPECIALIZED SERVICES ── -->
-<section class="mdso-org-tier mb-5" data-mdso-reveal>
-  <div class="mdso-tier-header mb-4" style="border-bottom:2px solid #C99C37;padding-bottom:.5rem">
-    <p style="font-family:'Barlow Condensed',sans-serif;font-size:.7rem;color:#C99C37;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin:0 0 .15rem">Specialized Operations</p>
-    <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;margin:0;font-size:1.75rem;line-height:1.05">Investigative & Specialized Services</h2>
-  </div>
-
-  <div class="row mb-2">
-    <div class="col-12 mb-4" data-mdso-reveal>
-      <div class="mdso-leader-card-featured h-100" style="background:linear-gradient(135deg,#3e2510 0%,#623A18 60%,#7d4d25 100%);color:#fff;border-radius:6px;overflow:hidden;border:2px solid #C99C37;box-shadow:0 8px 28px rgba(62,37,16,.25)">
-        <div class="row no-gutters h-100 align-items-stretch">
-          <div class="col-12 col-md-4">
-            <!-- IMG-COUNTY: https://www.miamidade.gov/resources-sheriff/images/Bio/javier-i-ruiz.jpg -->
-            <img src="https://www.miamidade.gov/resources-sheriff/images/Bio/javier-i-ruiz.jpg" alt="Javier I.  Ruiz" style="width:100%;height:100%;object-fit:cover;object-position:center top;min-height:320px;border-right:3px solid #C99C37;display:block">
-          </div>
-          <div class="col-12 col-md-8 p-4 d-flex flex-column">
-            <p style="font-family:'Barlow Condensed',sans-serif;font-size:.7rem;color:#C99C37;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 .4rem">Assistant Sheriff</p>
-            <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#fff;font-size:1.65rem;line-height:1.05;margin:0 0 .75rem">Javier I.  Ruiz</h3>
-            <p style="font-size:.9rem;color:rgba(255,255,255,.88);line-height:1.55;margin:0 0 1rem;flex-grow:1">Investigative &amp; Specialized Services</p>
-            <div style="border-top:1px solid rgba(201,156,55,.4);padding-top:.75rem;font-size:.85rem">
-              <div style="margin-bottom:.3rem"><span style="color:#C99C37">📞</span> <a href="tel:3054712260" style="color:#fff;text-decoration:none">305-471-2260</a></div>
-              <div><span style="color:#C99C37">✉</span> <a href="mailto:jiruiz@mdso.com" style="color:#fff;text-decoration:none">jiruiz@mdso.com</a></div>
-              <a href="/sheriff/about-mdso/biography/investigative-specialized-services-assistant-sheriff.page" style="display:inline-block;margin-top:.6rem;font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#C99C37;text-decoration:none;border-bottom:1px solid #C99C37;padding-bottom:2px">Read the Bio →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  <p style="font-family:'Barlow Condensed',sans-serif;font-size:.75rem;color:#623A18;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:1.5rem 0 1rem;padding-left:.25rem">Division Leadership</p>
-  <div class="row mdso-stagger">
-      <div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay:0.06s" data-mdso-reveal>
-        <div class="card card-mdso-gold-accent h-100" style="overflow:hidden;box-shadow:0 4px 16px rgba(62,37,16,.1)">
-          <!-- IMG-COUNTY: https://www.miamidade.gov/resources-sheriff/images/Bio/rita-rodriguez.jpg -->
-          <img src="https://www.miamidade.gov/resources-sheriff/images/Bio/rita-rodriguez.jpg" alt="Rita Rodriguez" style="width:100%;height:240px;object-fit:cover;object-position:center top;display:block">
-          <div class="p-3">
-            <p style="font-family:'Barlow Condensed',sans-serif;font-size:.65rem;color:#C99C37;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 .25rem">Division Chief</p>
-            <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;font-size:1rem;line-height:1.1;margin:0 0 .35rem">Rita Rodriguez</h5>
-            <p style="font-size:.78rem;color:#623A18;font-weight:600;margin:.4rem 0 .65rem;line-height:1.3">Criminal Investigations Division</p>
-            <div style="font-size:.78rem;color:#444;margin-bottom:.2rem"><span style="color:#16482F">📞</span> <a href="tel:3054712350" style="color:#444;text-decoration:none">305-471-2350</a></div>
-            
-            
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay:0.12s" data-mdso-reveal>
-        <div class="card card-mdso-gold-accent h-100" style="overflow:hidden;box-shadow:0 4px 16px rgba(62,37,16,.1)">
-          <!-- IMG-COUNTY: https://www.miamidade.gov/resources-sheriff/images/Bio/evens-gabriel-jr.jpg -->
-          <img src="https://www.miamidade.gov/resources-sheriff/images/Bio/evens-gabriel-jr.jpg" alt="Evens Gabriel, Jr." style="width:100%;height:240px;object-fit:cover;object-position:center top;display:block">
-          <div class="p-3">
-            <p style="font-family:'Barlow Condensed',sans-serif;font-size:.65rem;color:#C99C37;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 .25rem">Division Chief</p>
-            <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;font-size:1rem;line-height:1.1;margin:0 0 .35rem">Evens Gabriel, Jr.</h5>
-            <p style="font-size:.78rem;color:#623A18;font-weight:600;margin:.4rem 0 .65rem;line-height:1.3">Specialized Services Division</p>
-            <div style="font-size:.78rem;color:#444;margin-bottom:.2rem"><span style="color:#16482F">📞</span> <a href="tel:3054636420" style="color:#444;text-decoration:none">305-463-6420</a></div>
-            <div style="font-size:.78rem;color:#444"><span style="color:#16482F">✉</span> <a href="mailto:EGabrieljr@mdso.com" style="color:#444;text-decoration:none">EGabrieljr@mdso.com</a></div>
-            
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay:0.18s" data-mdso-reveal>
-        <div class="card card-mdso-gold-accent h-100" style="overflow:hidden;box-shadow:0 4px 16px rgba(62,37,16,.1)">
-          <!-- IMG-COUNTY: https://www.miamidade.gov/resources-sheriff/images/Bio/oliver-spicer2.jpg -->
-          <img src="https://www.miamidade.gov/resources-sheriff/images/Bio/oliver-spicer2.jpg" alt="Oliver S. Spicer" style="width:100%;height:240px;object-fit:cover;object-position:center top;display:block">
-          <div class="p-3">
-            <p style="font-family:'Barlow Condensed',sans-serif;font-size:.65rem;color:#C99C37;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 .25rem">Public Records Custodian</p>
-            <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;font-size:1rem;line-height:1.1;margin:0 0 .35rem">Oliver S. Spicer</h5>
-            
-            <div style="font-size:.78rem;color:#444;margin-bottom:.2rem"><span style="color:#16482F">📞</span> <a href="tel:3054712070" style="color:#444;text-decoration:none">305-471-2070</a></div>
-            <div style="font-size:.78rem;color:#444"><span style="color:#16482F">✉</span> <a href="mailto:recordsrequest@mdso.com" style="color:#444;text-decoration:none">recordsrequest@mdso.com</a></div>
-            
-          </div>
-        </div>
-      </div>
-  </div>
-  <p style="font-family:'Barlow Condensed',sans-serif;font-size:.75rem;color:#623A18;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:1.25rem 0 1rem;padding-left:.25rem">Bureaus &amp; District Stations</p>
-  <div class="row">
-      <div class="col-12 col-md-6 mb-3">
-        <div style="background:#f0ebe3;border-left:3px solid #16482F;padding:1.25rem 1.5rem;border-radius:4px;height:100%">
-          <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#16482F;font-size:1rem;margin:0 0 .75rem">Criminal Investigations Division</h5>
-          <ul style="list-style:none;padding:0;margin:0;font-size:.88rem;line-height:1.85">
-            <li><a href="/sheriff/about-mdso/homicide-bureau.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37">→ Homicide Bureau</a></li>
-            <li><a href="/sheriff/about-mdso/organized-crimes-bureau.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37">→ Organized Crimes Bureau</a></li>
-            <li><a href="/sheriff/about-mdso/robbery-bureau.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37">→ Robbery Bureau</a></li>
-            <li><a href="/sheriff/about-mdso/special-victims-bureau.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37">→ Special Victims Bureau</a></li>
-            <li><a href="/sheriff/about-mdso/homeland-security-bureau.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37">→ Homeland Security Bureau</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-12 col-md-6 mb-3">
-        <div style="background:#f0ebe3;border-left:3px solid #16482F;padding:1.25rem 1.5rem;border-radius:4px;height:100%">
-          <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#16482F;font-size:1rem;margin:0 0 .75rem">Specialized Services Division</h5>
-          <ul style="list-style:none;padding:0;margin:0;font-size:.88rem;line-height:1.85">
-            <li><a href="/sheriff/about-mdso/court-services-bureau.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37">→ Court Services Bureau</a></li>
-            <li><a href="/sheriff/about-mdso/warrants-bureau.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37">→ Warrants Bureau</a></li>
-            <li><a href="/sheriff/about-mdso/special-patrol-bureau.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37">→ Special Patrol Bureau</a></li>
-            <li><a href="/sheriff/about-mdso/airport-operations-bureau.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37">→ Airport Operations Bureau</a></li>
-            <li><a href="/sheriff/about-mdso/seaport-operations-bureau.page" style="color:#623A18;text-decoration:none;border-bottom:1px dotted #C99C37">→ Seaport Operations Bureau</a></li>
-          </ul>
-        </div>
-      </div>
-  </div>
-</section>
-
-<!-- ── 9. ADDITIONAL CONTACTS ───────────────────────────────── -->
-<section class="mdso-additional-contacts mb-4" style="background:#f0ebe3;border-radius:6px;padding:2rem">
-  <div class="row">
-    <div class="col-12 col-md-4 mb-3 mb-md-0">
-      <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;font-size:1.05rem;margin:0 0 .5rem;border-bottom:2px solid #C99C37;padding-bottom:.3rem">Public Records Request</h5>
-      <p style="font-size:.85rem;color:#444;line-height:1.55;margin:0 0 .75rem">Submit requests online through the MDSO Public Records System. Records are made available there once ready.</p>
-      <a href="https://miamidadecountyfl.govqa.us/webapp/_rs/supporthome.aspx" target="_blank" rel="noopener" style="font-size:.85rem;color:#16482F;font-weight:600;text-decoration:none;border-bottom:1px solid #C99C37">Submit a Records Request →</a>
-    </div>
-    <div class="col-12 col-md-4 mb-3 mb-md-0">
-      <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;font-size:1.05rem;margin:0 0 .5rem;border-bottom:2px solid #C99C37;padding-bottom:.3rem">Accessibility &amp; ADA</h5>
-      <p style="font-size:.85rem;color:#444;line-height:1.55;margin:0 0 .75rem">Persons needing assistance to participate in MDSO programs, activities, or services may contact Mabel Pujals.</p>
-      <div style="font-size:.85rem;color:#444"><span style="color:#16482F">📞</span> <a href="tel:3054711945" style="color:#444;text-decoration:none">305-471-1945</a></div>
-    </div>
-    <div class="col-12 col-md-4">
-      <h5 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;color:#623A18;font-size:1.05rem;margin:0 0 .5rem;border-bottom:2px solid #C99C37;padding-bottom:.3rem">Crime Stoppers</h5>
-      <p style="font-size:.85rem;color:#444;line-height:1.55;margin:0 0 .75rem">Crime Stoppers of Miami-Dade and the Florida Keys lets residents report crime anonymously to support investigations.</p>
-      <a href="https://www.p3tips.com/tipform.aspx?ID=139" target="_blank" rel="noopener" style="font-size:.85rem;color:#16482F;font-weight:600;text-decoration:none;border-bottom:1px solid #C99C37">Submit an Anonymous Tip →</a>
-    </div>
-  </div>
-</section>
+<div class="row text-center">
+<div class="col-6 col-md-3 mb-3 mb-md-0">
+<div class="mdso-info-icon mb-2" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #16482F; color: #fff; font-size: 1.2rem;">📍</div>
+<h6 style="font-family: 'Barlow Condensed',sans-serif; font-weight: bold; text-transform: uppercase; letter-spacing: .08em; color: #623a18; font-size: .85rem; margin: 0 0 .35rem;">Sheriff's Office Address</h6>
+<p style="font-size: .85rem; color: #444; margin: 0; line-height: 1.45;">9105 NW 25th Street<br>Doral, FL 33172</p>
+</div>
+<div class="col-6 col-md-3 mb-3 mb-md-0">
+<div class="mdso-info-icon mb-2" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #16482F; color: #fff; font-size: 1.2rem;">🕒</div>
+<h6 style="font-family: 'Barlow Condensed',sans-serif; font-weight: bold; text-transform: uppercase; letter-spacing: .08em; color: #623a18; font-size: .85rem; margin: 0 0 .35rem;">Hours of Operation</h6>
+<p style="font-size: .85rem; color: #444; margin: 0; line-height: 1.45;">Monday &ndash; Friday<br>8 a.m. &ndash; 5 p.m.</p>
+</div>
+<div class="col-6 col-md-3">
+<div class="mdso-info-icon mb-2" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #9c2f1e; color: #fff; font-size: 1.2rem;">⚠</div>
+<h6 style="font-family: 'Barlow Condensed',sans-serif; font-weight: bold; text-transform: uppercase; letter-spacing: .08em; color: #623a18; font-size: .85rem; margin: 0 0 .35rem;">Emergency</h6>
+<p style="font-size: .85rem; color: #444; margin: 0; line-height: 1.45;"><a style="color: #9c2f1e; font-weight: bold; font-size: 1.05rem; text-decoration: none;" href="tel:911">Call 911</a></p>
+</div>
+<div class="col-6 col-md-3">
+<div class="mdso-info-icon mb-2" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #623A18; color: #c99c37; font-size: 1.2rem;">☎</div>
+<h6 style="font-family: 'Barlow Condensed',sans-serif; font-weight: bold; text-transform: uppercase; letter-spacing: .08em; color: #623a18; font-size: .85rem; margin: 0 0 .35rem;">Non-Emergency</h6>
+<p style="font-size: .85rem; color: #444; margin: 0; line-height: 1.45;"><a style="color: #623a18; font-weight: 600; text-decoration: none;" href="tel:3057437433">305-SHERIFF<br>(305-743-7433)</a></p>
+</div>
+</div>
+<div class="mdso-tier-header mb-4" style="border-bottom: 2px solid #16482F; padding-bottom: .5rem;">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .7rem; color: #16482f; font-weight: bold; letter-spacing: .18em; text-transform: uppercase; margin: 0 0 .15rem;">Executive Command</p>
+<h2 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #623a18; margin: 0; font-size: 1.75rem; line-height: 1.05;">Office of the Sheriff</h2>
+</div>
+<div class="row mb-2">
+<div class="col-12 mb-4">
+<div class="mdso-leader-card-featured h-100" style="background: linear-gradient(135deg,#3e2510 0%,#623A18 60%,#7d4d25 100%); color: #fff; border-radius: 6px; overflow: hidden; border: 2px solid #C99C37; box-shadow: 0 8px 28px rgba(62,37,16,.25);">
+<div class="row no-gutters h-100 align-items-stretch">
+<div class="col-12 col-md-4"><img style="width: 100%; height: 100%; object-fit: cover; object-position: center top; min-height: 320px; border-right: 3px solid #C99C37; display: block;" src="https://assets.nationbuilder.com/mdso/pages/45/attachments/original/1781133086/rosie-cordero-stutz.jpg?1781133086" alt="Rosie Cordero-Stutz"></div>
+<div class="col-12 col-md-8 p-4 d-flex flex-column">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .7rem; color: #c99c37; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 0 0 .4rem;">Sheriff</p>
+<h3 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #fff; font-size: 1.65rem; line-height: 1.05; margin: 0 0 .75rem;">Rosie Cordero-Stutz</h3>
+<p style="font-size: .9rem; color: rgba(255,255,255,.88); line-height: 1.55; margin: 0 0 1rem; flex-grow: 1;">Sheriff Rosie has dedicated over 29 years to the law enforcement profession, rising through the ranks from police officer to assistant director. This has given her a profound understanding of serving her community and its unique needs and challenges.</p>
+<div style="border-top: 1px solid rgba(201,156,55,.4); padding-top: .75rem; font-size: .85rem;">
+<div style="margin-bottom: .3rem;"><span style="color: #c99c37;">📞</span> <a style="color: #fff; text-decoration: none;" href="tel:3054713518">305-471-3518</a></div>
+<div><span style="color: #c99c37;">✉</span> <a style="color: #fff; text-decoration: none;" href="mailto:sheriffrosie@mdso.com">sheriffrosie@mdso.com</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .75rem; color: #623a18; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 0 0 1rem; padding-left: .25rem;">Sheriff's Office Staff &amp; Advisors</p>
+<div class="row mdso-stagger">
+<div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay: 0.06s;">
+<div class="card card-mdso-gold-accent h-100" style="overflow: hidden; box-shadow: 0 4px 16px rgba(62,37,16,.1);"><img style="width: 100%; height: 240px; object-fit: cover; object-position: center 20%; display: block;" src="https://assets.nationbuilder.com/mdso/pages/45/attachments/original/1781133066/mark-rosenberg.jpg?1781133066" alt="Rabbi Mark Rosenberg">
+<div class="p-3">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .65rem; color: #c99c37; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 0 0 .25rem;">Senior Advisor to the Sheriff/Chief Chaplain</p>
+<h5 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #623a18; font-size: 1rem; line-height: 1.1; margin: 0 0 .35rem;">Rabbi Mark Rosenberg</h5>
+<div style="font-size: .78rem; color: #444; margin-bottom: .2rem;"><span style="color: #16482f;">📞</span> <a style="color: #444; text-decoration: none;" href="tel:3054712625">305-471-2625</a></div>
+<div style="font-size: .78rem; color: #444;"><span style="color: #16482f;">✉</span> <a style="color: #444; text-decoration: none;" href="mailto:mrosenberg@mdso.com">mrosenberg@mdso.com</a></div>
+</div>
+</div>
+</div>
+<div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay: 0.12s;">
+<div class="card card-mdso-gold-accent h-100" style="overflow: hidden; box-shadow: 0 4px 16px rgba(62,37,16,.1);"><img style="width: 100%; height: 240px; object-fit: cover; object-position: center 30%; display: block;" src="https://assets.nationbuilder.com/mdso/pages/45/attachments/original/1781133045/idalys-prieto.jpg?1781133045" alt="Idalys Prieto">
+<div class="p-3">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .65rem; color: #c99c37; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 0 0 .25rem;">Executive Aide to the Sheriff</p>
+<h5 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #623a18; font-size: 1rem; line-height: 1.1; margin: 0 0 .35rem;">Idalys Prieto</h5>
+<div style="font-size: .78rem; color: #444; margin-bottom: .2rem;"><span style="color: #16482f;">📞</span> <a style="color: #444; text-decoration: none;" href="tel:3054713272">305-471-3272</a></div>
+<div style="font-size: .78rem; color: #444;"><span style="color: #16482f;">✉</span> <a style="color: #444; text-decoration: none;" href="mailto:iprieto@mdso.com">iprieto@mdso.com</a></div>
+</div>
+</div>
+</div>
+<div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay: 0.18s;">
+<div class="card card-mdso-gold-accent h-100" style="overflow: hidden; box-shadow: 0 4px 16px rgba(62,37,16,.1);"><img style="width: 100%; height: 240px; object-fit: cover; object-position: center 20%; display: block;" src="https://assets.nationbuilder.com/mdso/pages/45/attachments/original/1781133062/karin-bobe-colon.jpg?1781133062" alt="Karin Bobe-Colon">
+<div class="p-3">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .65rem; color: #c99c37; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 0 0 .25rem;">Executive Officer to the Sheriff</p>
+<h5 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #623a18; font-size: 1rem; line-height: 1.1; margin: 0 0 .35rem;">Karin Bobe-Colon</h5>
+<div style="font-size: .78rem; color: #444; margin-bottom: .2rem;"><span style="color: #16482f;">📞</span> <a style="color: #444; text-decoration: none;" href="tel:7862083720">786-208-3720</a></div>
+<div style="font-size: .78rem; color: #444;"><span style="color: #16482f;">✉</span> <a style="color: #444; text-decoration: none;" href="mailto:kbobe@mdso.com">kbobe@mdso.com</a></div>
+</div>
+</div>
+</div>
+<div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay: 0.24s;">
+<div class="card card-mdso-gold-accent h-100" style="overflow: hidden; box-shadow: 0 4px 16px rgba(62,37,16,.1);"><img style="width: 100%; height: 240px; object-fit: cover; object-position: center 25%; display: block;" src="https://assets.nationbuilder.com/mdso/pages/45/attachments/original/1781133049/janet-lewis.jpg?1781133049" alt="Janet Lewis">
+<div class="p-3">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .65rem; color: #c99c37; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 0 0 .25rem;">General Counsel</p>
+<h5 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #623a18; font-size: 1rem; line-height: 1.1; margin: 0 0 .35rem;">Janet Lewis</h5>
+<p style="font-size: .78rem; color: #623a18; font-weight: 600; margin: .4rem 0 .65rem; line-height: 1.3;">General Counsel's Office</p>
+<div style="font-size: .78rem; color: #444; margin-bottom: .2rem;"><span style="color: #16482f;">📞</span> <a style="color: #444; text-decoration: none;" href="tel:3054711800">305-471-1800</a></div>
+<div style="font-size: .78rem; color: #444;"><span style="color: #16482f;">✉</span> <a style="color: #444; text-decoration: none;" href="mailto:jlewis@mdso.com">jlewis@mdso.com</a></div>
+</div>
+</div>
+</div>
+<div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay: 0.30s;">
+<div class="card card-mdso-gold-accent h-100" style="overflow: hidden; box-shadow: 0 4px 16px rgba(62,37,16,.1);"><img style="width: 100%; height: 240px; object-fit: cover; object-position: center 20%; display: block;" src="https://assets.nationbuilder.com/mdso/pages/45/attachments/original/1781133070/olenka-j-ryan-guerra.jpg?1781133070" alt="Olenka J. Ryan-Guerra">
+<div class="p-3">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .65rem; color: #c99c37; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 0 0 .25rem;">Lieutenant</p>
+<h5 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #623a18; font-size: 1rem; line-height: 1.1; margin: 0 0 .35rem;">Olenka J. Ryan-Guerra</h5>
+<p style="font-size: .78rem; color: #623a18; font-weight: 600; margin: .4rem 0 .65rem; line-height: 1.3;">Public Affairs Office</p>
+<div style="font-size: .78rem; color: #444; margin-bottom: .2rem;"><span style="color: #16482f;">📞</span> <a style="color: #444; text-decoration: none;" href="tel:3054711900">305-471-1900</a></div>
+<div style="font-size: .78rem; color: #444;"><span style="color: #16482f;">✉</span> <a style="color: #444; text-decoration: none;" href="mailto:og@mdso.com">og@mdso.com</a></div>
+</div>
+</div>
+</div>
+<div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay: 0.36s;">
+<div class="card card-mdso-gold-accent h-100" style="overflow: hidden; box-shadow: 0 4px 16px rgba(62,37,16,.1);">
+<div style="height: 240px; overflow: hidden;"><img style="width: 100%; height: 240px; object-fit: cover; display: block;" src="https://assets.nationbuilder.com/mdso/pages/45/attachments/original/1784679635/Castellanos001.JPG?1784679635" alt="Commander Mailyn Sola-Castellanos"></div>
+<div class="p-3">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .65rem; color: #c99c37; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 0 0 .25rem;">Commander</p>
+<h5 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #623a18; font-size: 1rem; line-height: 1.1; margin: 0 0 .35rem;">Mailyn Sola-Castellanos</h5>
+<p style="font-size: .78rem; color: #623a18; font-weight: 600; margin: .4rem 0 .65rem; line-height: 1.3;">Employee Mental Wellness Office</p>
+<div style="font-size: .78rem; color: #444; margin-bottom: .2rem;"><span style="color: #16482f;">📞</span> <a style="color: #444; text-decoration: none;" href="tel:3055911106">305-591-1106</a></div>
+</div>
+</div>
+</div>
+</div>
+<div class="mdso-tier-header mb-4" style="border-bottom: 2px solid #16482F; padding-bottom: .5rem;">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .7rem; color: #16482f; font-weight: bold; letter-spacing: .18em; text-transform: uppercase; margin: 0 0 .15rem;">Executive Command</p>
+<h2 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #623a18; margin: 0; font-size: 1.75rem; line-height: 1.05;">Office of the Undersheriff</h2>
+</div>
+<div class="row mb-2">
+<div class="col-12 mb-4">
+<div class="mdso-leader-card-featured h-100" style="background: linear-gradient(135deg,#3e2510 0%,#623A18 60%,#7d4d25 100%); color: #fff; border-radius: 6px; overflow: hidden; border: 2px solid #C99C37; box-shadow: 0 8px 28px rgba(62,37,16,.25);">
+<div class="row no-gutters h-100 align-items-stretch">
+<div class="col-12 col-md-4"><img style="width: 100%; height: 100%; object-fit: cover; object-position: center top; min-height: 320px; border-right: 3px solid #C99C37; display: block;" src="https://assets.nationbuilder.com/mdso/pages/45/attachments/original/1781133020/christopher-carothers.jpg?1781133020" alt="Christopher Carothers"></div>
+<div class="col-12 col-md-8 p-4 d-flex flex-column">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .7rem; color: #c99c37; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 0 0 .4rem;">Undersheriff</p>
+<h3 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #fff; font-size: 1.65rem; line-height: 1.05; margin: 0 0 .75rem;">Christopher Carothers</h3>
+<p style="font-size: .9rem; color: rgba(255,255,255,.88); line-height: 1.55; margin: 0 0 1rem; flex-grow: 1;">Christopher Carothers began his career with the Miami-Dade Police Department in 1996.</p>
+<div style="border-top: 1px solid rgba(201,156,55,.4); padding-top: .75rem; font-size: .85rem;">
+<div style="margin-bottom: .3rem;"><span style="color: #c99c37;">📞</span> <a style="color: #fff; text-decoration: none;" href="tel:3054712950">305-471-2950</a></div>
+<div><span style="color: #c99c37;">✉</span> <a style="color: #fff; text-decoration: none;" href="mailto:ccarothers@mdso.com">ccarothers@mdso.com</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mdso-tier-header mb-4" style="border-bottom: 2px solid #C99C37; padding-bottom: .5rem;">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .7rem; color: #c99c37; font-weight: bold; letter-spacing: .18em; text-transform: uppercase; margin: 0 0 .15rem;">Administrative Command</p>
+<h2 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #623a18; margin: 0; font-size: 1.75rem; line-height: 1.05;">Office of Administration</h2>
+</div>
+<div class="row mb-4">
+<div class="col-12 col-sm-6 col-lg-4 mb-4">
+<div class="card card-mdso-gold-accent h-100" style="overflow: hidden; box-shadow: 0 4px 16px rgba(62,37,16,.1);"><img style="width: 100%; height: 240px; object-fit: cover; object-position: center 20%; display: block;" src="https://assets.nationbuilder.com/mdso/pages/45/attachments/original/1781133041/gustavo-knoepffler.jpg?1781133041" alt="Gustavo Knoepffler">
+<div class="p-3">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .65rem; color: #c99c37; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 0 0 .25rem;">Executive Director</p>
+<h5 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #623a18; font-size: 1rem; line-height: 1.1; margin: 0 0 .35rem;">Gustavo Knoepffler</h5>
+<p style="font-size: .78rem; color: #623a18; font-weight: 600; margin: .4rem 0 .65rem; line-height: 1.3;">Office of Administration</p>
+<div style="font-size: .78rem; color: #444; margin-bottom: .2rem;"><span style="color: #16482f;">📞</span> <a style="color: #444; text-decoration: none;" href="tel:3054713665">305-471-3665</a></div>
+<div style="font-size: .78rem; color: #444;"><span style="color: #16482f;">✉</span> <a style="color: #444; text-decoration: none;" href="mailto:gknoepffler@mdso.com">gknoepffler@mdso.com</a></div>
+</div>
+</div>
+</div>
+</div>
+<div class="mdso-bureau-list" style="background: #f8f5f0; border-left: 4px solid #C99C37; padding: 1.5rem 1.75rem; border-radius: 4px;">
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="margin-bottom: .45rem;"><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37; font-size: .92rem; font-weight: 600;" href="/management-budget-office">&rarr; Management &amp; Budget Office</a> <span style="color: #888; font-size: .85rem; margin-left: .5rem;">CMDR Lissy Reyes-Wilcox &middot; 305-471-2520</span></li>
+<li style="margin-bottom: .45rem;"><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37; font-size: .92rem; font-weight: 600;" href="/finance-procurement-office">&rarr; Finance &amp; Procurement Office</a> <span style="color: #888; font-size: .85rem; margin-left: .5rem;">CMDR Nicholas A. Santos &middot; 305-471-3665</span></li>
+<li style="margin-bottom: .45rem;"><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37; font-size: .92rem; font-weight: 600;" href="/facilities-management-office">&rarr; Facilities Management Office</a> <span style="color: #888; font-size: .85rem; margin-left: .5rem;">CMDR Enrique Gaston &middot; 305-471-3665</span></li>
+<li style="margin-bottom: .45rem;"><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37; font-size: .92rem; font-weight: 600;" href="/human-resources-office">&rarr; Human Resources Office</a> <span style="color: #888; font-size: .85rem; margin-left: .5rem;">CMDR John Prats &middot; 305-471-1950</span></li>
+<li style="margin-bottom: .45rem;"><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37; font-size: .92rem; font-weight: 600;" href="/fleet-management-office">&rarr; Fleet Management Office</a> <span style="color: #888; font-size: .85rem; margin-left: .5rem;">CMDR Carlo Hollis-Brown &middot; 305-471-2001</span></li>
+</ul>
+</div>
+<div class="mdso-tier-header mb-4" style="border-bottom: 2px solid #C99C37; padding-bottom: .5rem;">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .7rem; color: #c99c37; font-weight: bold; letter-spacing: .18em; text-transform: uppercase; margin: 0 0 .15rem;">Oversight</p>
+<h2 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #623a18; margin: 0; font-size: 1.75rem; line-height: 1.05;">Professional Standards Division</h2>
+</div>
+<div class="row mb-4">
+<div class="col-12 col-sm-6 col-lg-4 mb-4">
+<div class="card card-mdso-gold-accent h-100" style="overflow: hidden; box-shadow: 0 4px 16px rgba(62,37,16,.1);"><img style="width: 100%; height: 240px; object-fit: cover; object-position: center 20%; display: block;" src="https://assets.nationbuilder.com/mdso/pages/45/attachments/original/1781133082/ronald-rebozo.jpg?1781133082" alt="Ronald Rebozo">
+<div class="p-3">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .65rem; color: #c99c37; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 0 0 .25rem;">Division Chief</p>
+<h5 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #623a18; font-size: 1rem; line-height: 1.1; margin: 0 0 .35rem;">Ronald Rebozo</h5>
+<p style="font-size: .78rem; color: #623a18; font-weight: 600; margin: .4rem 0 .65rem; line-height: 1.3;">Professional Standards Division</p>
+<div style="font-size: .78rem; color: #444; margin-bottom: .2rem;"><span style="color: #16482f;">📞</span> <a style="color: #444; text-decoration: none;" href="tel:3056277100">305-627-7100</a></div>
+<div style="font-size: .78rem; color: #444;"><span style="color: #16482f;">✉</span> <a style="color: #444; text-decoration: none;" href="mailto:rrebozo@mdso.com">rrebozo@mdso.com</a></div>
+</div>
+</div>
+</div>
+</div>
+<div class="mdso-bureau-list" style="background: #f8f5f0; border-left: 4px solid #C99C37; padding: 1.5rem 1.75rem; border-radius: 4px;">
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="margin-bottom: .45rem;"><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37; font-size: .92rem; font-weight: 600;" href="/internal-affairs-office">&rarr; Internal Affairs Office</a> <span style="color: #888; font-size: .85rem; margin-left: .5rem;">MJ Alain Sanchez &middot; 305-627-7100</span></li>
+<li style="margin-bottom: .45rem;"><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37; font-size: .92rem; font-weight: 600;" href="/training-center">&rarr; Miami-Dade Sheriff's Training Center</a> <span style="color: #888; font-size: .85rem; margin-left: .5rem;">305-715-5000</span></li>
+</ul>
+</div>
+<div class="mdso-tier-header mb-4" style="border-bottom: 2px solid #C99C37; padding-bottom: .5rem;">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .7rem; color: #c99c37; font-weight: bold; letter-spacing: .18em; text-transform: uppercase; margin: 0 0 .15rem;">Field Operations</p>
+<h2 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #623a18; margin: 0; font-size: 1.75rem; line-height: 1.05;">Patrol Services</h2>
+</div>
+<div class="row mb-2">
+<div class="col-12 mb-4">
+<div class="mdso-leader-card-featured h-100" style="background: linear-gradient(135deg,#3e2510 0%,#623A18 60%,#7d4d25 100%); color: #fff; border-radius: 6px; overflow: hidden; border: 2px solid #C99C37; box-shadow: 0 8px 28px rgba(62,37,16,.25);">
+<div class="row no-gutters h-100 align-items-stretch">
+<div class="col-12 col-md-4"><img style="width: 100%; height: 100%; object-fit: cover; object-position: center top; min-height: 320px; border-right: 3px solid #C99C37; display: block;" src="https://assets.nationbuilder.com/mdso/pages/45/attachments/original/1781133028/fernand-charles-jr.jpg?1781133028" alt="Fernand Charles Jr."></div>
+<div class="col-12 col-md-8 p-4 d-flex flex-column">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .7rem; color: #c99c37; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 0 0 .4rem;">Assistant Sheriff</p>
+<h3 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #fff; font-size: 1.65rem; line-height: 1.05; margin: 0 0 .75rem;">Fernand Charles Jr.</h3>
+<p style="font-size: .9rem; color: rgba(255,255,255,.88); line-height: 1.55; margin: 0 0 1rem; flex-grow: 1;">Patrol Services</p>
+<div style="border-top: 1px solid rgba(201,156,55,.4); padding-top: .75rem; font-size: .85rem;">
+<div style="margin-bottom: .3rem;"><span style="color: #c99c37;">📞</span> <a style="color: #fff; text-decoration: none;" href="tel:3054712350">305-471-2350</a></div>
+<div><span style="color: #c99c37;">✉</span> <a style="color: #fff; text-decoration: none;" href="mailto:fcharlesjr@mdso.com">fcharlesjr@mdso.com</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .75rem; color: #623a18; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 1.5rem 0 1rem; padding-left: .25rem;">Division Leadership</p>
+<div class="row mdso-stagger">
+<div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay: 0.06s;">
+<div class="card card-mdso-gold-accent h-100" style="overflow: hidden; box-shadow: 0 4px 16px rgba(62,37,16,.1);"><img style="width: 100%; height: 240px; object-fit: cover; object-position: center 30%; display: block;" src="https://assets.nationbuilder.com/mdso/pages/45/attachments/original/1781133095/tiffany-s-wesley.jpg?1781133095" alt="Tiffany S. Wesley">
+<div class="p-3">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .65rem; color: #c99c37; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 0 0 .25rem;">Division Chief</p>
+<h5 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #623a18; font-size: 1rem; line-height: 1.1; margin: 0 0 .35rem;">Tiffany S. Wesley</h5>
+<p style="font-size: .78rem; color: #623a18; font-weight: 600; margin: .4rem 0 .65rem; line-height: 1.3;">North Operations Division</p>
+<div style="font-size: .78rem; color: #444; margin-bottom: .2rem;"><span style="color: #16482f;">📞</span> <a style="color: #444; text-decoration: none;" href="tel:3054712945">305-471-2945</a></div>
+<div style="font-size: .78rem; color: #444;"><span style="color: #16482f;">✉</span> <a style="color: #444; text-decoration: none;" href="mailto:tswesley@mdso.com">tswesley@mdso.com</a></div>
+</div>
+</div>
+</div>
+<div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay: 0.12s;">
+<div class="card card-mdso-gold-accent h-100" style="overflow: hidden; box-shadow: 0 4px 16px rgba(62,37,16,.1);"><img style="width: 100%; height: 240px; object-fit: cover; object-position: center 15%; display: block;" src="https://assets.nationbuilder.com/mdso/pages/45/attachments/original/1781133074/raul-jaime-nunez.jpg?1781133074" alt="Raul &quot;Jaime&quot; Nunez">
+<div class="p-3">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .65rem; color: #c99c37; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 0 0 .25rem;">Division Chief</p>
+<h5 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #623a18; font-size: 1rem; line-height: 1.1; margin: 0 0 .35rem;">Raul "Jaime" Nunez</h5>
+<p style="font-size: .78rem; color: #623a18; font-weight: 600; margin: .4rem 0 .65rem; line-height: 1.3;">South Operations Division</p>
+<div style="font-size: .78rem; color: #444; margin-bottom: .2rem;"><span style="color: #16482f;">📞</span> <a style="color: #444; text-decoration: none;" href="tel:3054713165">305-471-3165</a></div>
+<div style="font-size: .78rem; color: #444;"><span style="color: #16482f;">✉</span> <a style="color: #444; text-decoration: none;" href="mailto:rjnunez@mdso.com">rjnunez@mdso.com</a></div>
+</div>
+</div>
+</div>
+</div>
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .75rem; color: #623a18; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 1.25rem 0 1rem; padding-left: .25rem;">Bureaus &amp; District Stations</p>
+<div class="row">
+<div class="col-12 col-md-6 mb-3">
+<div style="background: #f0ebe3; border-left: 3px solid #16482F; padding: 1.25rem 1.5rem; border-radius: 4px; height: 100%;">
+<h5 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #16482f; font-size: 1rem; margin: 0 0 .75rem;">North Operations Division</h5>
+<ul style="list-style: none; padding: 0; margin: 0; font-size: .88rem; line-height: 1.85;">
+<li><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37;" href="/intracoastal-district-station">&rarr; Intracoastal District Station</a> <span style="color: #888; font-size: .82rem;">&middot; MJ Rafael Rodriguez</span></li>
+<li><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37;" href="/northside-district-station">&rarr; Northside District Station</a> <span style="color: #888; font-size: .82rem;">&middot; MJ Vernon Williams</span></li>
+<li><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37;" href="/northwest-district-station">&rarr; Northwest District Station</a> <span style="color: #888; font-size: .82rem;">&middot; MJ Yolande Jacinthe</span></li>
+<li><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37;" href="/midwest-district-station">&rarr; Midwest District Station</a> <span style="color: #888; font-size: .82rem;">&middot; MJ Odel Perez</span></li>
+<li><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37;" href="/government-services-bureau">&rarr; Government Services Bureau</a> <span style="color: #888; font-size: .82rem;">&middot; MJ William Gonzalez</span></li>
+<li><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37;" href="/miami-lakes-municipal-district">&rarr; Miami Lakes Municipal District</a> <span style="color: #888; font-size: .82rem;">&middot; MJ Eddy Ulloa</span></li>
+</ul>
+</div>
+</div>
+<div class="col-12 col-md-6 mb-3">
+<div style="background: #f0ebe3; border-left: 3px solid #16482F; padding: 1.25rem 1.5rem; border-radius: 4px; height: 100%;">
+<h5 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #16482f; font-size: 1rem; margin: 0 0 .75rem;">South Operations Division</h5>
+<ul style="list-style: none; padding: 0; margin: 0; font-size: .88rem; line-height: 1.85;">
+<li><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37;" href="/hammocks-district-station">&rarr; Hammocks District Station</a> <span style="color: #888; font-size: .82rem;">&middot; MJ Rigoberto Machado</span></li>
+<li><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37;" href="/kendall-district-station">&rarr; Kendall District Station</a> <span style="color: #888; font-size: .82rem;">&middot; MJ Luis Poveda</span></li>
+<li><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37;" href="/south-district-station">&rarr; South District Station</a> <span style="color: #888; font-size: .82rem;">&middot; MJ Mirtha Viton</span></li>
+<li style="color: #623a18; font-weight: 600;">&rarr; Agricultural Patrol Section <span style="color: #888; font-size: .82rem; font-weight: 400;">&middot; CPT Marcos Martinez</span></li>
+<li><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37;" href="/palmetto-bay-municipal-district">&rarr; Palmetto Bay Municipal District</a> <span style="color: #888; font-size: .82rem;">&middot; MJ Antonio Rodriguez</span></li>
+<li><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37;" href="/cutler-bay-municipal-district">&rarr; Cutler Bay Municipal District</a> <span style="color: #888; font-size: .82rem;">&middot; MJ Leonard Ricelli</span></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="mdso-tier-header mb-4" style="border-bottom: 2px solid #C99C37; padding-bottom: .5rem;">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .7rem; color: #c99c37; font-weight: bold; letter-spacing: .18em; text-transform: uppercase; margin: 0 0 .15rem;">Support &amp; Logistics</p>
+<h2 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #623a18; margin: 0; font-size: 1.75rem; line-height: 1.05;">Support Services</h2>
+</div>
+<div class="row mb-2">
+<div class="col-12 mb-4">
+<div class="mdso-leader-card-featured h-100" style="background: linear-gradient(135deg,#3e2510 0%,#623A18 60%,#7d4d25 100%); color: #fff; border-radius: 6px; overflow: hidden; border: 2px solid #C99C37; box-shadow: 0 8px 28px rgba(62,37,16,.25);">
+<div class="row no-gutters h-100 align-items-stretch">
+<div class="col-12 col-md-4"><img style="width: 100%; height: 100%; object-fit: cover; object-position: center top; min-height: 320px; border-right: 3px solid #C99C37; display: block;" src="https://assets.nationbuilder.com/mdso/pages/45/attachments/original/1781133015/andrew-glass.jpg?1781133015" alt="Andrew Glass"></div>
+<div class="col-12 col-md-8 p-4 d-flex flex-column">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .7rem; color: #c99c37; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 0 0 .4rem;">Assistant Sheriff</p>
+<h3 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #fff; font-size: 1.65rem; line-height: 1.05; margin: 0 0 .75rem;">Andrew Glass</h3>
+<p style="font-size: .9rem; color: rgba(255,255,255,.88); line-height: 1.55; margin: 0 0 1rem; flex-grow: 1;">Support Services</p>
+<div style="border-top: 1px solid rgba(201,156,55,.4); padding-top: .75rem; font-size: .85rem;">
+<div style="margin-bottom: .3rem;"><span style="color: #c99c37;">📞</span> <a style="color: #fff; text-decoration: none;" href="tel:3054712622">305-471-2622</a></div>
+<div><span style="color: #c99c37;">✉</span> <a style="color: #fff; text-decoration: none;" href="mailto:aglass@mdso.com">aglass@mdso.com</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .75rem; color: #623a18; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 1.5rem 0 1rem; padding-left: .25rem;">Division Leadership</p>
+<div class="row mdso-stagger">
+<div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay: 0.06s;">
+<div class="card card-mdso-gold-accent h-100" style="overflow: hidden; box-shadow: 0 4px 16px rgba(62,37,16,.1);"><img style="width: 100%; height: 240px; object-fit: cover; object-position: center 20%; display: block;" src="https://assets.nationbuilder.com/mdso/pages/45/attachments/original/1781133058/juan-villalba-jr.jpg?1781133058" alt="Juan Villalba Jr.">
+<div class="p-3">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .65rem; color: #c99c37; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 0 0 .25rem;">Division Chief</p>
+<h5 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #623a18; font-size: 1rem; line-height: 1.1; margin: 0 0 .35rem;">Juan Villalba Jr.</h5>
+<p style="font-size: .78rem; color: #623a18; font-weight: 600; margin: .4rem 0 .65rem; line-height: 1.3;">Centralized Services Division</p>
+<div style="font-size: .78rem; color: #444; margin-bottom: .2rem;"><span style="color: #16482f;">📞</span> <a style="color: #444; text-decoration: none;" href="tel:3054713663">305-471-3663</a></div>
+<div style="font-size: .78rem; color: #444;"><span style="color: #16482f;">✉</span> <a style="color: #444; text-decoration: none;" href="mailto:jvillalba@mdso.com">jvillalba@mdso.com</a></div>
+</div>
+</div>
+</div>
+<div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay: 0.12s;">
+<div class="card card-mdso-gold-accent h-100" style="overflow: hidden; box-shadow: 0 4px 16px rgba(62,37,16,.1);"><img style="width: 100%; height: 240px; object-fit: cover; object-position: center 20%; display: block;" src="https://assets.nationbuilder.com/mdso/pages/45/attachments/original/1781133037/gina-beato-dominguez.jpg?1781133037" alt="Gina Beato-Dominguez">
+<div class="p-3">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .65rem; color: #c99c37; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 0 0 .25rem;">Division Chief</p>
+<h5 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #623a18; font-size: 1rem; line-height: 1.1; margin: 0 0 .35rem;">Gina Beato-Dominguez</h5>
+<p style="font-size: .78rem; color: #623a18; font-weight: 600; margin: .4rem 0 .65rem; line-height: 1.3;">Planning &amp; Special Projects Office</p>
+<div style="font-size: .78rem; color: #444; margin-bottom: .2rem;"><span style="color: #16482f;">📞</span> <a style="color: #444; text-decoration: none;" href="tel:3054712167">305-471-2167</a></div>
+<div style="font-size: .78rem; color: #444;"><span style="color: #16482f;">✉</span> <a style="color: #444; text-decoration: none;" href="mailto:gbeato@mdso.com">gbeato@mdso.com</a></div>
+</div>
+</div>
+</div>
+<div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay: 0.18s;">
+<div class="card card-mdso-gold-accent h-100" style="overflow: hidden; box-shadow: 0 4px 16px rgba(62,37,16,.1);"><img style="width: 100%; height: 240px; object-fit: cover; object-position: center 26%; display: block;" src="https://assets.nationbuilder.com/mdso/pages/45/attachments/original/1781133090/stephanie-stoiloff.jpg?1781133090" alt="Stephanie L. Stoiloff">
+<div class="p-3">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .65rem; color: #c99c37; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 0 0 .25rem;">Division Director</p>
+<h5 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #623a18; font-size: 1rem; line-height: 1.1; margin: 0 0 .35rem;">Stephanie L. Stoiloff</h5>
+<p style="font-size: .78rem; color: #623a18; font-weight: 600; margin: .4rem 0 .65rem; line-height: 1.3;">Forensic &amp; Technology Division</p>
+<div style="font-size: .78rem; color: #444; margin-bottom: .2rem;"><span style="color: #16482f;">📞</span> <a style="color: #444; text-decoration: none;" href="tel:3054712675">305-471-2675</a></div>
+<div style="font-size: .78rem; color: #444;"><span style="color: #16482f;">✉</span> <a style="color: #444; text-decoration: none;" href="mailto:slstoiloff@mdso.com">slstoiloff@mdso.com</a></div>
+</div>
+</div>
+</div>
+<div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay: 0.24s;">
+<div class="card card-mdso-gold-accent h-100" style="overflow: hidden; box-shadow: 0 4px 16px rgba(62,37,16,.1);">
+<div style="height: 240px; background: linear-gradient(135deg,#f0ebe3,#d9d3c8); display: flex; align-items: center; justify-content: center; color: rgba(98,58,24,.2); font-size: 4rem;">👤</div>
+<div class="p-3">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .65rem; color: #c99c37; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 0 0 .25rem;">Commander</p>
+<h5 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #623a18; font-size: 1rem; line-height: 1.1; margin: 0 0 .35rem;">Domingo Alfaro</h5>
+<p style="font-size: .78rem; color: #623a18; font-weight: 600; margin: .4rem 0 .65rem; line-height: 1.3;">Air Support Unit</p>
+<div style="font-size: .78rem; color: #444; margin-bottom: .2rem;"><span style="color: #16482f;">📞</span> <a style="color: #444; text-decoration: none;" href="tel:3057437433">305-743-7433</a></div>
+</div>
+</div>
+</div>
+<div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay: 0.3s;">
+<div class="card card-mdso-gold-accent h-100" style="overflow: hidden; box-shadow: 0 4px 16px rgba(62,37,16,.1);"><img style="width: 100%; height: 240px; object-fit: cover; object-position: center 18%; display: block;" src="https://assets.nationbuilder.com/mdso/pages/45/attachments/original/1781133033/george-perera.jpg?1781133033" alt="George S. Perera Jr.">
+<div class="p-3">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .65rem; color: #c99c37; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 0 0 .25rem;">Division Chief</p>
+<h5 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #623a18; font-size: 1rem; line-height: 1.1; margin: 0 0 .35rem;">George S. Perera Jr.</h5>
+<p style="font-size: .78rem; color: #623a18; font-weight: 600; margin: .4rem 0 .65rem; line-height: 1.3;">Technology &amp; Information Security Division</p>
+<div style="font-size: .78rem; color: #444; margin-bottom: .2rem;"><span style="color: #16482f;">📞</span> <a style="color: #444; text-decoration: none;" href="tel:3058635080">305-863-5080</a></div>
+</div>
+</div>
+</div>
+</div>
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .75rem; color: #623a18; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 1.25rem 0 1rem; padding-left: .25rem;">Bureaus &amp; Units</p>
+<div class="row">
+<div class="col-12 col-md-6 mb-3">
+<div style="background: #f0ebe3; border-left: 3px solid #16482F; padding: 1.25rem 1.5rem; border-radius: 4px; height: 100%;">
+<h5 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #16482f; font-size: 1rem; margin: 0 0 .75rem;">Centralized Services Division</h5>
+<ul style="list-style: none; padding: 0; margin: 0; font-size: .88rem; line-height: 1.85;">
+<li><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37;" href="/community-affairs-bureau">&rarr; Community Affairs Bureau</a> <span style="color: #888; font-size: .82rem;">&middot; MJ Viviane Louis</span></li>
+<li><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37;" href="/central-records-bureau">&rarr; Central Records Bureau</a> <span style="color: #888; font-size: .82rem;">&middot; CMDR Oliver Spicer</span></li>
+<li><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37;" href="/communications">&rarr; Communications Bureau</a> <span style="color: #888; font-size: .82rem;">&middot; MJ Thamy Gonzalez</span></li>
+</ul>
+</div>
+</div>
+<div class="col-12 col-md-6 mb-3">
+<div style="background: #f0ebe3; border-left: 3px solid #16482F; padding: 1.25rem 1.5rem; border-radius: 4px; height: 100%;">
+<h5 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #16482f; font-size: 1rem; margin: 0 0 .75rem;">Forensic &amp; Technology Division</h5>
+<ul style="list-style: none; padding: 0; margin: 0; font-size: .88rem; line-height: 1.85;">
+<li style="color: #623a18; font-weight: 600;">&rarr; Crime Laboratory <span style="color: #888; font-size: .82rem; font-weight: 400;">&middot; MNG Colleen Carbine</span></li>
+<li><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37;" href="/crime-scene-evidence-bureau">&rarr; Crime Scene &amp; Evidence Bureau</a> <span style="color: #888; font-size: .82rem;">&middot; MJ Farrel J. Owens Jr.</span></li>
+<li style="color: #623a18; font-weight: 600;">&rarr; Property &amp; Evidence Section</li>
+<li style="color: #623a18; font-weight: 600;">&rarr; Information Technology Office <span style="color: #888; font-size: .82rem; font-weight: 400;">&middot; CMDR Jose Rivero</span></li>
+<li style="color: #623a18; font-weight: 600;">&rarr; Technology &amp; Info Security Division</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="mdso-tier-header mb-4" style="border-bottom: 2px solid #C99C37; padding-bottom: .5rem;">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .7rem; color: #c99c37; font-weight: bold; letter-spacing: .18em; text-transform: uppercase; margin: 0 0 .15rem;">Specialized Operations</p>
+<h2 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #623a18; margin: 0; font-size: 1.75rem; line-height: 1.05;">Investigative &amp; Specialized Services</h2>
+</div>
+<div class="row mb-2">
+<div class="col-12 mb-4">
+<div class="mdso-leader-card-featured h-100" style="background: linear-gradient(135deg,#3e2510 0%,#623A18 60%,#7d4d25 100%); color: #fff; border-radius: 6px; overflow: hidden; border: 2px solid #C99C37; box-shadow: 0 8px 28px rgba(62,37,16,.25);">
+<div class="row no-gutters h-100 align-items-stretch">
+<div class="col-12 col-md-4"><img style="width: 100%; height: 100%; object-fit: cover; object-position: center top; min-height: 320px; border-right: 3px solid #C99C37; display: block;" src="https://assets.nationbuilder.com/mdso/pages/45/attachments/original/1781133054/javier-i-ruiz.jpg?1781133054" alt="Javier I. Ruiz"></div>
+<div class="col-12 col-md-8 p-4 d-flex flex-column">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .7rem; color: #c99c37; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 0 0 .4rem;">Assistant Sheriff</p>
+<h3 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #fff; font-size: 1.65rem; line-height: 1.05; margin: 0 0 .75rem;">Javier I. Ruiz</h3>
+<p style="font-size: .9rem; color: rgba(255,255,255,.88); line-height: 1.55; margin: 0 0 1rem; flex-grow: 1;">Investigative &amp; Specialized Services</p>
+<div style="border-top: 1px solid rgba(201,156,55,.4); padding-top: .75rem; font-size: .85rem;">
+<div style="margin-bottom: .3rem;"><span style="color: #c99c37;">📞</span> <a style="color: #fff; text-decoration: none;" href="tel:3054712260">305-471-2260</a></div>
+<div><span style="color: #c99c37;">✉</span> <a style="color: #fff; text-decoration: none;" href="mailto:jiruiz@mdso.com">jiruiz@mdso.com</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .75rem; color: #623a18; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 1.5rem 0 1rem; padding-left: .25rem;">Division Leadership</p>
+<div class="row mdso-stagger">
+<div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay: 0.06s;">
+<div class="card card-mdso-gold-accent h-100" style="overflow: hidden; box-shadow: 0 4px 16px rgba(62,37,16,.1);"><img style="width: 100%; height: 240px; object-fit: cover; object-position: center 20%; display: block;" src="https://assets.nationbuilder.com/mdso/pages/45/attachments/original/1781133078/rita-rodriguez.jpg?1781133078" alt="Rita Rodriguez">
+<div class="p-3">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .65rem; color: #c99c37; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 0 0 .25rem;">Division Chief</p>
+<h5 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #623a18; font-size: 1rem; line-height: 1.1; margin: 0 0 .35rem;">Rita Rodriguez</h5>
+<p style="font-size: .78rem; color: #623a18; font-weight: 600; margin: .4rem 0 .65rem; line-height: 1.3;">Criminal Investigations Division</p>
+<div style="font-size: .78rem; color: #444; margin-bottom: .2rem;"><span style="color: #16482f;">📞</span> <a style="color: #444; text-decoration: none;" href="tel:3054712350">305-471-2350</a></div>
+</div>
+</div>
+</div>
+<div class="col-12 col-sm-6 col-lg-4 mb-4" style="animation-delay: 0.12s;">
+<div class="card card-mdso-gold-accent h-100" style="overflow: hidden; box-shadow: 0 4px 16px rgba(62,37,16,.1);"><img style="width: 100%; height: 240px; object-fit: cover; object-position: center 20%; display: block;" src="https://assets.nationbuilder.com/mdso/pages/45/attachments/original/1781133024/evens-gabriel-jr.jpg?1781133024" alt="Evens Gabriel, Jr.">
+<div class="p-3">
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .65rem; color: #c99c37; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 0 0 .25rem;">Division Chief</p>
+<h5 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #623a18; font-size: 1rem; line-height: 1.1; margin: 0 0 .35rem;">Evens Gabriel, Jr.</h5>
+<p style="font-size: .78rem; color: #623a18; font-weight: 600; margin: .4rem 0 .65rem; line-height: 1.3;">Specialized Services Division</p>
+<div style="font-size: .78rem; color: #444; margin-bottom: .2rem;"><span style="color: #16482f;">📞</span> <a style="color: #444; text-decoration: none;" href="tel:3054636420">305-463-6420</a></div>
+<div style="font-size: .78rem; color: #444;"><span style="color: #16482f;">✉</span> <a style="color: #444; text-decoration: none;" href="mailto:EGabrieljr@mdso.com">EGabrieljr@mdso.com</a></div>
+</div>
+</div>
+</div>
+</div>
+<p style="font-family: 'Barlow Condensed',sans-serif; font-size: .75rem; color: #623a18; font-weight: bold; letter-spacing: .15em; text-transform: uppercase; margin: 1.25rem 0 1rem; padding-left: .25rem;">Bureaus &amp; Units</p>
+<div class="row">
+<div class="col-12 col-md-6 mb-3">
+<div style="background: #f0ebe3; border-left: 3px solid #16482F; padding: 1.25rem 1.5rem; border-radius: 4px; height: 100%;">
+<h5 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #16482f; font-size: 1rem; margin: 0 0 .75rem;">Criminal Investigations Division</h5>
+<ul style="list-style: none; padding: 0; margin: 0; font-size: .88rem; line-height: 1.85;">
+<li><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37;" href="/organized-crimes-bureau">&rarr; Organized Crimes Bureau</a> <span style="color: #888; font-size: .82rem;">&middot; MJ Jorge Aguiar</span></li>
+<li><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37;" href="/homicide-bureau">&rarr; Homicide Bureau</a> <span style="color: #888; font-size: .82rem;">&middot; MJ Patrick Calvo</span></li>
+<li><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37;" href="/robbery-bureau">&rarr; Robbery Bureau</a> <span style="color: #888; font-size: .82rem;">&middot; MJ Alfredo G-Larrinaga</span></li>
+<li><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37;" href="/special-victims-bureau">&rarr; Special Victims Bureau</a> <span style="color: #888; font-size: .82rem;">&middot; MJ Yosvany Sosa</span></li>
+<li><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37;" href="/homeland-security-bureau">&rarr; Homeland Security Bureau</a> <span style="color: #888; font-size: .82rem;">&middot; MJ Roberto Irizarry</span></li>
+<li style="color: #623a18; font-weight: 600;">&rarr; Real-Time Operations Center</li>
+<li><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37;" href="/cyber-crimes-bureau">&rarr; Cyber Crimes Bureau</a></li>
+</ul>
+</div>
+</div>
+<div class="col-12 col-md-6 mb-3">
+<div style="background: #f0ebe3; border-left: 3px solid #16482F; padding: 1.25rem 1.5rem; border-radius: 4px; height: 100%;">
+<h5 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #16482f; font-size: 1rem; margin: 0 0 .75rem;">Specialized Services Division</h5>
+<ul style="list-style: none; padding: 0; margin: 0; font-size: .88rem; line-height: 1.85;">
+<li><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37;" href="/warrants-bureau">&rarr; Warrants Bureau</a> <span style="color: #888; font-size: .82rem;">&middot; MJ Jean Volcy</span></li>
+<li><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37;" href="/court-services-bureau">&rarr; Court Services Bureau</a> <span style="color: #888; font-size: .82rem;">&middot; MJ John Barrow</span></li>
+<li><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37;" href="/special-patrol-bureau">&rarr; Special Patrol Bureau</a> <span style="color: #888; font-size: .82rem;">&middot; MJ Benny Solis</span></li>
+<li><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37;" href="/seaport-operations-bureau">&rarr; Seaport Operations Bureau</a> <span style="color: #888; font-size: .82rem;">&middot; MJ Domingo Martinez</span></li>
+<li><a style="color: #623a18; text-decoration: none; border-bottom: 1px dotted #C99C37;" href="/airport-operations-bureau">&rarr; Airport Operations Bureau</a> <span style="color: #888; font-size: .82rem;">&middot; MJ Lonny Allen</span></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-12 col-md-4 mb-3 mb-md-0">
+<h5 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #623a18; font-size: 1.05rem; margin: 0 0 .5rem; border-bottom: 2px solid #C99C37; padding-bottom: .3rem;">Public Records Request</h5>
+<p style="font-size: .85rem; color: #444; line-height: 1.55; margin: 0 0 .75rem;">Submit requests online through the MDSO Public Records System. Records are made available there once ready.</p>
+<a style="font-size: .85rem; color: #16482f; font-weight: 600; text-decoration: none; border-bottom: 1px solid #C99C37;" rel="noopener" href="https://miamidadecountyfl.govqa.us/webapp/_rs/supporthome.aspx" target="_blank">Submit a Records Request &rarr;</a></div>
+<div class="col-12 col-md-4 mb-3 mb-md-0">
+<h5 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #623a18; font-size: 1.05rem; margin: 0 0 .5rem; border-bottom: 2px solid #C99C37; padding-bottom: .3rem;">Accessibility &amp; ADA</h5>
+<p style="font-size: .85rem; color: #444; line-height: 1.55; margin: 0 0 .75rem;">Persons needing assistance to participate in MDSO programs, activities, or services may contact Mabel Pujals.</p>
+<div style="font-size: .85rem; color: #444;"><span style="color: #16482f;">📞</span> <a style="color: #444; text-decoration: none;" href="tel:3054711945">305-471-1945</a></div>
+</div>
+<div class="col-12 col-md-4">
+<h5 style="font-family: 'Barlow Condensed',sans-serif; font-weight: 800; text-transform: uppercase; color: #623a18; font-size: 1.05rem; margin: 0 0 .5rem; border-bottom: 2px solid #C99C37; padding-bottom: .3rem;">Crime Stoppers</h5>
+<p style="font-size: .85rem; color: #444; line-height: 1.55; margin: 0 0 .75rem;">Crime Stoppers of Miami-Dade and the Florida Keys lets residents report crime anonymously to support investigations.</p>
+<a style="font-size: .85rem; color: #16482f; font-weight: 600; text-decoration: none; border-bottom: 1px solid #C99C37;" rel="noopener" href="https://www.p3tips.com/tipform.aspx?ID=139" target="_blank">Submit an Anonymous Tip &rarr;</a></div>
+</div>
